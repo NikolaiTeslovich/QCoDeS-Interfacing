@@ -12,4 +12,4 @@ To Do:
 
 ### Installing Ubuntu
 
-The SSD was wiped and the latest version of Ubuntu, 22.04 LTS, was with a USb thumbdrive. I used [balenaEtcher](https://www.balena.io/etcher/) was used to create the installation media. 
+The SSD was wiped and the latest version of Ubuntu, 22.04 LTS, was installed on it. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media. 

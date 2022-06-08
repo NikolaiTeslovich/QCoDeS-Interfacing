@@ -8,6 +8,8 @@ To Do:
 
 # Detailed log of progress
 
-## Step 1: Configuring the desktop
+## Step 1: Configuring the lab computer
 
 ### Installing Ubuntu
+
+The SSD was wiped and the latest version of Ubuntu, 22.04 LTS, was with a USb thumbdrive. I used [balenaEtcher](https://www.balena.io/etcher/) was used to create the installation media. 

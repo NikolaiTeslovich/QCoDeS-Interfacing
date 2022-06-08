@@ -6,8 +6,6 @@
   Interfacing various equipment through Ethernet and GPIB with QCoDeS through the development of drivers and accompanying programs in python, initially in jupyter lab.
 </p>
 
-# QCoDeS Interfacing
-
 To Do:
 - [x] Install Ubuntu on lab desktop
 - [x] Install *jupyter lab* on Ubuntu

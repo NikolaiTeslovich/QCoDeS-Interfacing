@@ -4,7 +4,8 @@ Interfacing various equipment through Ethernet and GPIB with QCoDeS through the 
 
 To Do:
 - [x] Install Ubuntu on lab desktop
-- [ ] Install *jupyter lab* on Ubuntu
+- [ ] Install *jupyter lab* on Ubuntu\
+  - [x] Install miniconda
 
 # Detailed log of progress
 
@@ -12,4 +13,4 @@ To Do:
 
 ### Installing Ubuntu
 
-The SSD was wiped and the latest version of Ubuntu, 22.04 LTS, was installed on it. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media. 
+The SSD was wiped and the latest version of Ubuntu, 22.04 LTS, was installed on it. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.

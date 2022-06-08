@@ -1,11 +1,20 @@
-# QCoDeS Interfacing
+<h1 align="center">
+  QCoDeS-Interfacing
+</h1>
 
-Interfacing various equipment through Ethernet and GPIB with QCoDeS through the development of drivers and accompanying programs in python, initially in jupyter lab.
+<p align="center">
+  Interfacing various equipment through Ethernet and GPIB with QCoDeS through the development of drivers and accompanying programs in python, initially in jupyter lab.
+</p>
+
+# QCoDeS Interfacing
 
 To Do:
 - [x] Install Ubuntu on lab desktop
-- [ ] Install *jupyter lab* on Ubuntu\
+- [x] Install *jupyter lab* on Ubuntu
   - [x] Install miniconda
+- [ ] Install QCoDeS
+- [ ] Go through the QCoDeS tutorial again
+- [ ] Interface with the Yokogawa GS200 over Ethernet
 
 # Detailed log of progress
 
@@ -41,4 +50,4 @@ Test that it works by launching it:
 ```
 jupyter lab
 ```
-Running that command should have launched a window in your browser. 
+Running that command should have launched a window in your browser.

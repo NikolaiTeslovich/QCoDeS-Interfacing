@@ -11,6 +11,34 @@ To Do:
 
 ## Step 1: Configuring the lab computer
 
-### Installing Ubuntu
+### Ubuntu
 
 The SSD was wiped and the latest version of Ubuntu, 22.04 LTS, was installed on it. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
+
+### Miniconda & jupyter lab
+
+First, miniconda was installed by downloading the latest release:
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+
+The file has a *.sh* ending meaning that it is a shell script. So to install it, navigate to the directory of the file in the terminal and then make the script executable:
+```
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+```
+
+Then, execute it:
+```
+./Miniconda3-latest-Linux-x86_64.sh
+```
+
+After the installation has finished, releaunch the terminal and install jupyter lab:
+```
+conda install -c conda-forge jupyterlab
+```
+
+Test that it works by launching it:
+```
+jupyter lab
+```
+Running that command should have launched a window in your browser. 

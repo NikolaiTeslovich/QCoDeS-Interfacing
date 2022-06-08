@@ -4,4 +4,10 @@ Interfacing various equipment through Ethernet and GPIB with QCoDeS through the 
 
 To Do:
 - [x] Install Ubuntu on lab desktop
-- [ ] Figure out how to install *jupyter lab* on Ubuntu
+- [ ] Install *jupyter lab* on Ubuntu
+
+# Detailed log of progress
+
+## Step 1: Configuring the desktop
+
+### Installing Ubuntu

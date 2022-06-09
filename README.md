@@ -49,3 +49,21 @@ Test that it works by launching it:
 jupyter lab
 ```
 Running that command should have launched a window in your browser.
+
+### QCoDeS installation
+
+To actually install QCoDeS, first a conda environment was created following this [installation guide](https://qcodes.github.io/Qcodes/start/index.html) using python version 3.9, the latest supported by QCoDeS:
+```
+conda create -n qcodes python=3.9
+```
+
+Then, the environment was activated:
+```
+conda activate qcodes
+```
+
+Last but not least, the latest version of QCoDeS was installed with pip:
+
+```
+pip install qcodes
+```

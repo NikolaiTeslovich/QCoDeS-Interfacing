@@ -77,7 +77,22 @@ Pyvisa-py, a python backend for pyvisa was installed with the following command:
 pip install pyvisa-py==0.5.2
 ```
 
-Then, pyusb and pyserial were installed so that the library could actually interface with the instruments: 
+Then, pyusb and pyserial were installed so that the library could actually interface with the instruments:
 ```
 pip install pyusb && pip install pyserial
+```
+
+To make sure all the necessary packages work, the following command is run to verify:
+```
+python -m visa info
+```
+
+***Important***
+
+```
+conda activate qcodes
+```
+
+```
+conda env list
 ```

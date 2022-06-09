@@ -14,7 +14,7 @@ To Do:
 - [ ] Go through the QCoDeS tutorial again
 - [ ] Interface with the Yokogawa GS200 over Ethernet
 
-# Detailed log of progress
+# Progress thus far
 
 ## Step 1: Configuring the lab computer
 
@@ -22,7 +22,7 @@ To Do:
 
 The SSD was wiped and the latest version of Ubuntu, 22.04 LTS, was installed on it. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
 
-### Miniconda & jupyter lab
+### Miniconda
 
 First, miniconda was installed by downloading the latest release:
 ```
@@ -39,18 +39,7 @@ Then, execute it:
 ./Miniconda3-latest-Linux-x86_64.sh
 ```
 
-After the installation has finished, releaunch the terminal and install jupyter lab:
-```
-conda install -c conda-forge jupyterlab
-```
-
-Test that it works by launching it:
-```
-jupyter lab
-```
-Running that command should have launched a window in your browser.
-
-### QCoDeS installation
+### QCoDeS & jupyter lab installation
 
 To actually install QCoDeS, first a conda environment was created following this [installation guide](https://qcodes.github.io/Qcodes/start/index.html) using python version 3.9, the latest supported by QCoDeS:
 ```
@@ -62,8 +51,13 @@ Then, the environment was activated:
 conda activate qcodes
 ```
 
-Last but not least, the latest version of QCoDeS was installed with pip:
+Next, the latest version of QCoDeS was installed with pip:
 
 ```
 pip install qcodes
+```
+
+Jupyter lab was installed with pip also:
+```
+pip install jupyterlab
 ```

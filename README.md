@@ -90,9 +90,13 @@ python -m visa info
 ***Important***
 
 ```
-conda activate qcodes
+conda env list
 ```
 
 ```
-conda env list
+conda activate qcodes
 ```
+
+***Also*** you sometimes do not have permission in Ubuntu to actually add and use the instrument in this case.
+
+https://www.xmodulo.com/change-usb-device-permission-linux.html

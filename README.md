@@ -69,3 +69,15 @@ Making sure that the qcodes is the current conda environment, the jupyter notebo
 ```
 jupyter lab
 ```
+
+## Step 3: Insatlling pyvisa:
+
+Pyvisa-py, a python backend for pyvisa was installed with the following command:
+```
+pip install pyvisa-py==0.5.2
+```
+
+Then, pyusb and pyserial were installed so that the library could actually interface with the instruments: 
+```
+pip install pyusb && pip install pyserial
+```

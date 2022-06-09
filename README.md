@@ -10,8 +10,8 @@ To Do:
 - [x] Install Ubuntu on lab desktop
 - [x] Install *jupyter lab* on Ubuntu
   - [x] Install miniconda
-- [ ] Install QCoDeS
-- [ ] Go through the QCoDeS tutorial again
+- [x] Install QCoDeS
+- [x] Go through the QCoDeS tutorial again
 - [ ] Interface with the Yokogawa GS200 over Ethernet
 
 # Progress thus far
@@ -52,7 +52,6 @@ conda activate qcodes
 ```
 
 Next, the latest version of QCoDeS was installed with pip:
-
 ```
 pip install qcodes
 ```
@@ -60,4 +59,13 @@ pip install qcodes
 Jupyter lab was installed with pip also:
 ```
 pip install jupyterlab
+```
+
+## Step 2: Starting the notebook
+
+### Launching jupyter lab
+
+Making sure that the qcodes is the current conda environment, the jupyter notebooks can be launched with:
+```
+jupyter lab
 ```

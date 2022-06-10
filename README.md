@@ -101,4 +101,6 @@ https://www.xmodulo.com/change-usb-device-permission-linux.html
 ***Trying this method instead***:
 
 https://stackoverflow.com/questions/66480203/pyvisa-not-listing-usb-instrument-on-linux
+
+pip install gpib-ctypes
 sudo usermod -a -G dialout nikolai

@@ -104,3 +104,5 @@ https://stackoverflow.com/questions/66480203/pyvisa-not-listing-usb-instrument-o
 
 pip install gpib-ctypes
 sudo usermod -a -G dialout nikolai
+
+### Step 4: Installing ni-visa drivers

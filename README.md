@@ -51,14 +51,9 @@ Then, the environment was activated:
 conda activate qcodes
 ```
 
-Next, the latest version of QCoDeS was installed with pip:
+Next, the latest version of QCoDeS and jupyter lab was installed with pip:
 ```
-pip install qcodes
-```
-
-Jupyter lab was installed with pip also:
-```
-pip install jupyterlab
+pip install qcodes jupyterlab
 ```
 
 ## Step 2: Starting the notebook
@@ -97,6 +92,13 @@ conda env list
 conda activate qcodes
 ```
 
+pip install qcodes_contrib_drivers
+
 ***Also*** you sometimes do not have permission in Ubuntu to actually add and use the instrument in this case.
 
 https://www.xmodulo.com/change-usb-device-permission-linux.html
+
+***Trying this method instead***:
+
+https://stackoverflow.com/questions/66480203/pyvisa-not-listing-usb-instrument-on-linux
+sudo usermod -a -G dialout nikolai

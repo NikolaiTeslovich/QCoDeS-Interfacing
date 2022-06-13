@@ -112,7 +112,6 @@ Backends:
       USB RAW: Available via PyUSB (1.2.1). Backend: libusb1
       TCPIP INSTR: Available
       TCPIP SOCKET: Available
-
 ```
 
 ## Step 2: Starting the notebook

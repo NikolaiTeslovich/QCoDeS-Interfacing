@@ -6,22 +6,22 @@ conda<h1 align="center">
   Interfacing various equipment through Ethernet and GPIB with QCoDeS through the development of drivers and accompanying programs in python, initially in jupyter lab.
 </p>
 
-To Do:
-- [x] Install Ubuntu on lab desktop
-- [x] Install *jupyter lab* on Ubuntu
+## To Do:
+- [x] Prepare the desktop
+  - [x] Install Ubuntu on lab desktop
+  - [x] Install jupyter lab
   - [x] Install miniconda
-- [x] Install QCoDeS
+  - [x] Install QCoDeS
 - [x] Go through the QCoDeS tutorial again
 - [x] Interface with the Yokogawa GS200 over USB
-- [ ] Find a safer way to interact with the instrument apart from enabling USB sudo access
-
-# Progress thus far
+- [x] Find a safer way to interact with the instrument apart from enabling USB sudo access
+- [ ] Connect some other instruments and come up with an interesting experiment
 
 ## Step 1: Configuring the lab computer
 
 ### Ubuntu
 
-The SSD was wiped and the latest version of Ubuntu, 22.04 LTS, was installed on it. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
+The SSD was wiped and the latest version of Ubuntu, 20.04 LTS, was installed on it. 20.04 was used as that is the latest version supported by the national instrument drivers. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
 
 ### Miniconda
 
@@ -40,42 +40,37 @@ Then, execute it:
 ./Miniconda3-latest-Linux-x86_64.sh
 ```
 
-### QCoDeS & jupyter lab installation
+### QCoDeS & river installation
 
 To actually install QCoDeS, first a conda environment was created following this [installation guide](https://qcodes.github.io/Qcodes/start/index.html) using python version 3.9, the latest supported by QCoDeS:
 ```
 conda create -n qcodes python=3.9
 ```
 
-Then, the environment was activated:
+Then, the environment is activated:
 ```
 conda activate qcodes
 ```
 
-Next, the latest version of QCoDeS and jupyter lab was installed with pip:
+Next, the latest version of QCoDeS, jupyter lab and other useful packages were installed with pip, pyvisa-py version 0.5.2 is the latest version that works with the version of pyvisa that qcodes uses:
 ```
-pip install qcodes pip install qcodes_contrib_drivers jupyterlab
-```
-
-## Step 2: Starting the notebook
-
-### Launching jupyter lab
-
-Making sure that the qcodes is the current conda environment, the jupyter notebooks can be launched with:
-```
-jupyter lab
+pip install qcodes qcodes_contrib_drivers jupyterlab pyvisa-py==0.5.2 pyusb pyserial gpib-ctypes
 ```
 
-## Step 3: Insatlling pyvisa:
+First, the [NI drivers](https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html#442675) were installed following [the installation guide on NI website](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html). You will have to make an account, but the download is free.
 
-Pyvisa-py, a python backend for pyvisa was installed with the following command:
+Then, the NI visa backend was installed:
+
 ```
-pip install
+sudo apt install ni-visa
 ```
 
-Then, pyusb, pyserial, and a gpib library were installed so that the library could actually interface with the instruments:
+For the device to properly work over USB, the [following guide on stackoverflow](https://askubuntu.com/a/1073159) was essential in enabling root permissions for the instrument.
+
+Then, the system is rebooted with:
+
 ```
-pip install pyvisa-py==0.5.2 pyusb pyserial gpib-ctypes
+sudo reboot
 ```
 
 To make sure all the necessary packages work, the following command is run to verify:
@@ -83,36 +78,16 @@ To make sure all the necessary packages work, the following command is run to ve
 pyvisa -info
 ```
 
-***Important***
+## Step 2: Starting the notebook
 
-```
-conda env list
-```
+### Launching jupyter lab
+
+Making sure that the qcodes is the current conda environment, then jupyter lab can be launched with:
 
 ```
 conda activate qcodes
 ```
 
-***Also*** you sometimes do not have permission in Ubuntu to actually add and use the instrument in this case.
-
-***Trying this method instead***:
-
-https://stackoverflow.com/questions/66480203/pyvisa-not-listing-usb-instrument-on-linux
-
 ```
-sudo su
+jupyter lab
 ```
-
-```
-echo 'SUBSYSTEM=="usb", MODE="0666", GROUP="usbusers"' >> /etc/udev/rules.d/99-com.rules
-```
-
-```
-reboot
-```
-
-### Step 4: Installing ni-visa drivers
-
-Download the latest NI Driver software, install the stream version following the guide
-
-https://askubuntu.com/a/1073159 - this properly enables permissions

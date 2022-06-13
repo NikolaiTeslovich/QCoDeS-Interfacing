@@ -12,7 +12,8 @@ To Do:
   - [x] Install miniconda
 - [x] Install QCoDeS
 - [x] Go through the QCoDeS tutorial again
-- [ ] Interface with the Yokogawa GS200 over Ethernet
+- [x] Interface with the Yokogawa GS200 over USB
+- [ ] Find a safer way to interact with the instrument apart from enabling USB sudo access
 
 # Progress thus far
 
@@ -69,12 +70,12 @@ jupyter lab
 
 Pyvisa-py, a python backend for pyvisa was installed with the following command:
 ```
-pip install pyvisa-py==0.5.2
+pip install
 ```
 
-Then, pyusb and pyserial were installed so that the library could actually interface with the instruments:
+Then, pyusb, pyserial, and a gpib library were installed so that the library could actually interface with the instruments:
 ```
-pip install pyusb && pip install pyserial
+pip install pyvisa-py==0.5.2 pyusb pyserial gpib-ctypes
 ```
 
 To make sure all the necessary packages work, the following command is run to verify:
@@ -92,17 +93,24 @@ conda env list
 conda activate qcodes
 ```
 
-pip install qcodes_contrib_drivers
-
 ***Also*** you sometimes do not have permission in Ubuntu to actually add and use the instrument in this case.
-
-https://www.xmodulo.com/change-usb-device-permission-linux.html
 
 ***Trying this method instead***:
 
 https://stackoverflow.com/questions/66480203/pyvisa-not-listing-usb-instrument-on-linux
 
-pip install gpib-ctypes
-sudo usermod -a -G dialout nikolai
+```
+sudo su
+```
+
+```
+echo 'SUBSYSTEM=="usb", MODE="0666", GROUP="usbusers"' >> /etc/udev/rules.d/99-com.rules
+```
+
+```
+reboot
+```
 
 ### Step 4: Installing ni-visa drivers
+
+Download the latest NI Driver software, install the stream version following the guide

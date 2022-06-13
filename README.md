@@ -40,7 +40,7 @@ Then, execute it:
 ./Miniconda3-latest-Linux-x86_64.sh
 ```
 
-### QCoDeS & river installation
+### QCoDeS & driver installation
 
 To actually install QCoDeS, first a conda environment was created following this [installation guide](https://qcodes.github.io/Qcodes/start/index.html) using python version 3.9, the latest supported by QCoDeS:
 ```

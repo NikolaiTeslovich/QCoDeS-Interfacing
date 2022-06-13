@@ -75,7 +75,44 @@ sudo reboot
 
 To make sure all the necessary packages work, the following command is run to verify:
 ```
-pyvisa -info
+conda activate qcodes && pyvisa -info
+```
+
+The output should look something like this:
+
+```
+Machine Details:
+   Platform ID:    Linux-5.13.0-48-generic-x86_64-with-glibc2.31
+   Processor:      x86_64
+
+Python:
+   Implementation: CPython
+   Executable:     /home/nikolai/miniconda3/envs/qcodes/bin/python
+   Version:        3.9.12
+   Compiler:       GCC 7.5.0
+   Bits:           64bit
+   Build:          Jun  1 2022 11:38:51 (#main)
+   Unicode:        UCS4
+
+PyVISA Version: 1.12.0
+
+Backends:
+   ivi:
+      Version: 1.12.0 (bundled with PyVISA)
+      #1: /usr/lib/x86_64-linux-gnu/libvisa.so.21.5.0:
+         found by: auto
+         bitness: 64
+         Vendor: National Instruments
+         Impl. Version: 22021376
+         Spec. Version: 5244928
+   py:
+      Version: 0.5.2
+      ASRL INSTR: Available via PySerial (3.5)
+      USB INSTR: Available via PyUSB (1.2.1). Backend: libusb1
+      USB RAW: Available via PyUSB (1.2.1). Backend: libusb1
+      TCPIP INSTR: Available
+      TCPIP SOCKET: Available
+
 ```
 
 ## Step 2: Starting the notebook

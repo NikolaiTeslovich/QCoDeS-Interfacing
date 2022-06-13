@@ -1,4 +1,4 @@
-<h1 align="center">
+conda<h1 align="center">
   QCoDeS-Interfacing
 </h1>
 
@@ -54,7 +54,7 @@ conda activate qcodes
 
 Next, the latest version of QCoDeS and jupyter lab was installed with pip:
 ```
-pip install qcodes jupyterlab
+pip install qcodes pip install qcodes_contrib_drivers jupyterlab
 ```
 
 ## Step 2: Starting the notebook
@@ -114,3 +114,5 @@ reboot
 ### Step 4: Installing ni-visa drivers
 
 Download the latest NI Driver software, install the stream version following the guide
+
+https://askubuntu.com/a/1073159 - this properly enables permissions

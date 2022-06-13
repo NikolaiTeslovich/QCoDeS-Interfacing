@@ -82,12 +82,8 @@ pyvisa -info
 
 ### Launching jupyter lab
 
-Making sure that the qcodes is the current conda environment, then jupyter lab can be launched with:
+Making sure that the qcodes is the current conda environment and that this is being run from the home directory, then jupyter lab can be launched with:
 
 ```
-conda activate qcodes
-```
-
-```
-jupyter lab
+conda activate qcodes && cd ~ && jupyter lab
 ```

@@ -80,7 +80,7 @@ pip install pyvisa-py==0.5.2 pyusb pyserial gpib-ctypes
 
 To make sure all the necessary packages work, the following command is run to verify:
 ```
-python -m visa info
+pyvisa -info
 ```
 
 ***Important***

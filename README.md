@@ -85,10 +85,12 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 From this, we can see that `Bus 001 Device 005: ID 0b21:0039 Yokogawa Electric Corp. GS200` is the instrument that we are interested in. The `0b21:0039` represents the vendor id and the product id separated by a colon, `[vendor id]:[product id]`.
 
 The udev permission is then updated with the following command, creating a file `visa.rules` with the new rule:
+
 ```
 echo "SUBSYSTEM=="usb", ATTRS{idVendor}=="[vendor id]", ATTRS{idProduct}=="[product id]", MODE="0666"
-" >> /etc/udev/rules.d/visa.rules
+" | sudo tee --append /etc/udev/rules.d/visa.rules
 ```
+> Note that this command to update the udev rules can be run many times, adding all the necessary USB instruments
 
 Then, the system is rebooted with:
 ```

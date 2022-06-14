@@ -77,7 +77,7 @@ It should return an output that looks like this:
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 Bus 001 Device 004: ID 413c:2010 Dell Computer Corp. Keyboard
 Bus 001 Device 003: ID 413c:1003 Dell Computer Corp. Keyboard Hub
-Bus 001 Device 002: ID 04[product id]6d:c016 Logitech, Inc. Optical Wheel Mouse
+Bus 001 Device 002: ID 046d:c016 Logitech, Inc. Optical Wheel Mouse
 Bus 001 Device 005: ID 0b21:0039 Yokogawa Electric Corp. GS200
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```

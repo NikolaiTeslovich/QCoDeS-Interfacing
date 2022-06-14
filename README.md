@@ -15,15 +15,16 @@ conda<h1 align="center">
 - [x] Go through the QCoDeS tutorial again
 - [x] Interface with the Yokogawa GS200 over USB
 - [x] Find a safer way to interact with the instrument apart from enabling USB sudo access
+- [ ] Hook up the BNC breakout box somehow
 - [ ] Connect some other instruments and come up with an interesting experiment
 
 ## Step 1: Configuring the lab computer
 
 ### Ubuntu
 
-The SSD was wiped and the latest version of Ubuntu, 20.04 LTS, was installed on it. 20.04 was used as that is the latest version supported by the national instrument drivers. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
+[Ubuntu 20.04 LTS](https://releases.ubuntu.com/20.04/) was installed on the lab desktop. 20.04 was used as it is the latest version supported by the National Instrument drivers. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
 
-### Miniconda
+### MinicondaUbuntu 20.04 LTS
 
 First, miniconda was installed by downloading the latest release:
 ```
@@ -42,7 +43,7 @@ Then, execute it:
 
 ### QCoDeS & driver installation
 
-To actually install QCoDeS, first a conda environment was created following this [installation guide](https://qcodes.github.io/Qcodes/start/index.html) using python version 3.9, the latest supported by QCoDeS:
+To install QCoDeS, first a conda environment was created using python version 3.9, the latest supported by QCoDeS:
 ```
 conda create -n qcodes python=3.9
 ```
@@ -60,18 +61,41 @@ pip install qcodes qcodes_contrib_drivers jupyterlab pyvisa-py==0.5.2 pyusb pyse
 First, the [NI drivers](https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html#442675) were installed following [the installation guide on NI website](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html). You will have to make an account, but the download is free.
 
 Then, the NI visa backend was installed:
-
 ```
 sudo apt install ni-visa
 ```
 
-For the device to properly work over USB, the [following guide on stackoverflow](https://askubuntu.com/a/1073159) was essential in enabling root permissions for the instrument.
+### Configuring USB udev rules
+
+For the device to properly work over USB, the udev rules have to be updated. First run the usb device listing command to see what devices are connected to the computer:
+```
+lsusb
+```
+
+It should return an output that looks like this:
+```
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 004: ID 413c:2010 Dell Computer Corp. Keyboard
+Bus 001 Device 003: ID 413c:1003 Dell Computer Corp. Keyboard Hub
+Bus 001 Device 002: ID 04[product id]6d:c016 Logitech, Inc. Optical Wheel Mouse
+Bus 001 Device 005: ID 0b21:0039 Yokogawa Electric Corp. GS200
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+```
+
+From this, we can see that `Bus 001 Device 005: ID 0b21:0039 Yokogawa Electric Corp. GS200` is the instrument that we are interested in. The `0b21:0039` represents the vendor id and the product id separated by a colon, `[vendor id]:[product id]`.
+
+The udev permission is then updated with the following command, creating a file `visa.rules` with the new rule:
+```
+echo "SUBSYSTEM=="usb", ATTRS{idVendor}=="[vendor id]", ATTRS{idProduct}=="[product id]", MODE="0666"
+" >> /etc/udev/rules.d/visa.rules
+```
 
 Then, the system is rebooted with:
-
 ```
 sudo reboot
 ```
+
+### Checking that all packages work
 
 To make sure all the necessary packages work, the following command is run to verify:
 ```
@@ -79,7 +103,6 @@ conda activate qcodes && pyvisa -info
 ```
 
 The output should look something like this:
-
 ```
 Machine Details:
    Platform ID:    Linux-5.13.0-48-generic-x86_64-with-glibc2.31
@@ -118,8 +141,12 @@ Backends:
 
 ### Launching jupyter lab
 
-Making sure that the qcodes is the current conda environment and that this is being run from the home directory, then jupyter lab can be launched with:
-
+Jupyter lab can be launched with the following command that activates the qcodes conda environment and automatically goes into the user's home directory:
 ```
 conda activate qcodes && cd ~ && jupyter lab
 ```
+
+## Sources used:
+
+- [QCoDeS installation guide](https://qcodes.github.io/Qcodes/start/index.html)
+- [udev permissions](https://askubuntu.com/a/1073159)

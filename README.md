@@ -1,4 +1,4 @@
-conda<h1 align="center">
+<h1 align="center">
   QCoDeS-Interfacing
 </h1>
 
@@ -20,9 +20,18 @@ conda<h1 align="center">
 
 ## Step 1: Configuring the lab computer
 
+### UEFI Secure Boot
+
+***Important:*** UEFI secure boot must be disabled in BIOS so that the VISA devices can interface with the computer properly.
+
 ### Ubuntu installation
 
 [Ubuntu 20.04 LTS](https://releases.ubuntu.com/20.04/) was installed on the lab desktop. 20.04 was used as it is the latest version supported by the National Instrument drivers. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
+
+Then, as soon as the computer is logged into, all the packages are updated to their latest versions and the computer is rebooted:
+```
+sudo apt update && sudo apt dist-upgrade && sudo reboot
+```
 
 ### Miniconda installation
 
@@ -31,7 +40,7 @@ First, miniconda was installed by downloading the latest release:
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ```
 
-The file has a *.sh* ending meaning that it is a shell script. So to install it, navigate to the directory of the file in the terminal and then make the script executable:
+The file has a `.sh` ending meaning that it is a shell script. So to install it, navigate to the directory of the file in the terminal and then make the script executable:
 ```
 chmod +x Miniconda3-latest-Linux-x86_64.sh
 ```
@@ -41,7 +50,7 @@ Then, execute it:
 ./Miniconda3-latest-Linux-x86_64.sh
 ```
 
-### QCoDeS & driver installation
+### QCoDeS & python backend installation
 
 To install QCoDeS, first a conda environment was created using python version 3.9, the latest supported by QCoDeS:
 ```
@@ -53,16 +62,63 @@ Then, the environment is activated:
 conda activate qcodes
 ```
 
-Next, the latest version of QCoDeS, jupyter lab and other useful packages were installed with pip, pyvisa-py version 0.5.2 is the latest version that works with the version of pyvisa that qcodes uses:
+Next, the latest version of QCoDeS, jupyter lab and other useful packages were installed with pip. pyvisa-py version 0.5.2 is the latest version that works with the version of pyvisa that qcodes uses:
 ```
 pip install qcodes qcodes_contrib_drivers jupyterlab pyvisa-py==0.5.2 pyusb pyserial gpib-ctypes
 ```
 
-First, the [NI drivers](https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html#442675) were installed following [the installation guide on NI website](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html). You will have to make an account, but the download is free.
+### National Instruments driver installation
 
-Then, the NI visa backend was installed:
+First, the [NI drivers](https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html#442675) were installed following [the installation guide on NI website](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html). You will have to make an account, but the download is free. Here is the installation guide worked out bit by bit:
+
+First, the latest [NI Linux Device Driver](https://www.ni.com/en-us/support/downloads/drivers/download.ni-linux-device-drivers.html#451206) version is downloaded (2022 Q2 at the time of writing). The NI drivers will probably end up in the downloads folder of your computer, so enter that directory:
+```
+cd ~/Downloads
+```
+
+Then, the file is unzipped with the following command, the asterisk means that what is after the NILinux and before .zip doesn't matter in locating the file:
+```
+unzip NILinux*.zip
+```
+
+Next, the [National Instrument driver installation guide](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html) is followed for Ubuntu. The first step is to apply the latest system updates and reboot the system:
+```
+sudo apt update && sudo apt dist-upgrade && sudo reboot
+```
+
+The kernel version is checked:
+```
+uname -r
+```
+
+Only run the following command if the kernel version is >= 5.13 to fix a bug that occurs during install:
+```
+sudo touch /usr/src/linux-headers-$(uname -r)/include/config/modversions.h
+```
+
+The driver directory in Downloads is entered into, replacing the directory with the one you have (Tab can be used as auto-complete):
+```
+cd ~/Downloads/NILinux2022Q2DeviceDrivers
+```
+
+Then, the `stream` or latest version latest of the drivers for `ubuntu2004` are installed:
+```
+sudo apt install ./ni-ubuntu2004firstlook-drivers-stream.deb
+```
+
+The package list is refreshed so that other NI components can also be installed:
+```
+sudo apt update
+```
+
+Then, the NI visa backend is installed from a [list of other available packages](https://www.ni.com/pdf/manuals/378353g.html):
 ```
 sudo apt install ni-visa
+```
+
+The NI kernel drivers are built, and the system is rebooted:
+```
+sudo dkms autoinstall && sudo reboot
 ```
 
 ### Configuring USB udev rules
@@ -84,7 +140,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 From this, we can see that `Bus 001 Device 005: ID 0b21:0039 Yokogawa Electric Corp. GS200` is the instrument that we are interested in. The `0b21:0039` represents the vendor id and the product id separated by a colon, `[vendor id]:[product id]`.
 
-The udev permission is then updated with the following command, creating a file `visa.rules` with the new rule:
+The udev permission is then updated with the following command, creating the file `visa.rules` with the new rule:
 
 ```
 echo "SUBSYSTEM=="usb", ATTRS{idVendor}=="[vendor id]", ATTRS{idProduct}=="[product id]", MODE="0666"
@@ -143,7 +199,7 @@ Backends:
 
 ### Launching jupyter lab
 
-Jupyter lab can be launched with the following command that activates the qcodes conda environment and automatically goes into the user's home directory:
+Jupyter lab can be launched with the following command that activates the qcodes conda environment and goes into the user's home directory:
 ```
 conda activate qcodes && cd ~ && jupyter lab
 ```
@@ -154,5 +210,6 @@ The [initialization notebook](/QCoDeS_VISA_Init.ipynb) serves as a template from
 
 ## Sources used:
 
-- [QCoDeS installation guide](https://qcodes.github.io/Qcodes/start/index.html)
+- [QCoDeS installation](https://qcodes.github.io/Qcodes/start/index.html)
+- [National Instruments driver installation](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html)
 - [udev permissions](https://askubuntu.com/a/1073159)

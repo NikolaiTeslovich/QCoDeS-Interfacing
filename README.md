@@ -20,11 +20,11 @@ conda<h1 align="center">
 
 ## Step 1: Configuring the lab computer
 
-### Ubuntu
+### Ubuntu installation
 
 [Ubuntu 20.04 LTS](https://releases.ubuntu.com/20.04/) was installed on the lab desktop. 20.04 was used as it is the latest version supported by the National Instrument drivers. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
 
-### MinicondaUbuntu 20.04 LTS
+### Miniconda installation
 
 First, miniconda was installed by downloading the latest release:
 ```

@@ -69,9 +69,7 @@ pip install qcodes qcodes_contrib_drivers jupyterlab pyvisa-py==0.5.2 pyusb pyse
 
 ### National Instruments driver installation
 
-First, the [NI drivers](https://www.ni.com/en-us/support/downloads/drivers/download.ni-visa.html#442675) were installed following [the installation guide on NI website](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html). You will have to make an account, but the download is free. Here is the installation guide worked out bit by bit:
-
-First, the latest [NI Linux Device Driver](https://www.ni.com/en-us/support/downloads/drivers/download.ni-linux-device-drivers.html#451206) version is downloaded (2022 Q2 at the time of writing). The NI drivers will probably end up in the downloads folder of your computer, so enter that directory:
+First, the latest [NI Linux Device Driver](https://www.ni.com/en-us/support/downloads/drivers/download.ni-linux-device-drivers.html#451206) version is downloaded (2022 Q2 at the time of writing). You will have to make an account, but the download is free. The NI drivers will probably end up in the downloads folder of your computer, so enter that directory:
 ```
 cd ~/Downloads
 ```

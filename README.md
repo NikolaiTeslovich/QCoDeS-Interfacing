@@ -150,7 +150,7 @@ conda activate qcodes && cd ~ && jupyter lab
 
 ### Connecting to the instrument(s)
 
-The [initialization notebook](/blob/main/QCoDeS_VISA_Init.ipynb) serves as a template from which a connection can be established over VISA. 
+The [initialization notebook](/QCoDeS_VISA_Init.ipynb) serves as a template from which a connection can be established over VISA.
 
 ## Sources used:
 

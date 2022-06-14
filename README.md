@@ -148,6 +148,10 @@ Jupyter lab can be launched with the following command that activates the qcodes
 conda activate qcodes && cd ~ && jupyter lab
 ```
 
+### Connecting to the instrument(s)
+
+The [initialization notebook](/blob/main/QCoDeS_VISA_Init.ipynb) serves as a template from which a connection can be established over VISA. 
+
 ## Sources used:
 
 - [QCoDeS installation guide](https://qcodes.github.io/Qcodes/start/index.html)

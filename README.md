@@ -15,7 +15,7 @@
 - [x] Go through the QCoDeS tutorial again
 - [x] Interface with the Yokogawa GS200 over USB
 - [x] Find a safer way to interact with the instrument apart from enabling USB sudo access
-- [ ] Hook up the BNC breakout box somehow
+- [x] Hook up the BNC breakout box somehow
 - [ ] Connect some other instruments and come up with an interesting experiment
 
 ## Step 1: Configuring the lab computer
@@ -35,7 +35,7 @@ sudo apt update && sudo apt dist-upgrade && sudo reboot
 
 ### Miniconda installation
 
-First, miniconda was installed by downloading the latest release:
+First, miniconda was installed by downloading the latest release with `wget`:
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ```

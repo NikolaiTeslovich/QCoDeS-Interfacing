@@ -10,7 +10,7 @@
 
 | Part | Quantity | Image |
 | :---: | :---: |  :---: |
-| Pair of Banana Cables | 2x | ![cables](/resources/BNC_Resistor_Breakout/parts/cables.jpg) |
+| Pair of Banana Cables | 2x | <img src="/resources/BNC_Resistor_Breakout/bnc.jpg" width="500"> |
 | BNC Enclosure w/ Resistor | 1x | ![enclosure](/resources/BNC_Resistor_Breakout/parts/bnc_box.jpg) |
 | BNC End Cap | 1x | ![end cap](/resources/BNC_Resistor_Breakout/parts/bnc_end_cap.jpg) |
 | BNC Male-Male | 1x | ![bnc male-male](/resources/BNC_Resistor_Breakout/parts/bnc_male_male.jpg) |

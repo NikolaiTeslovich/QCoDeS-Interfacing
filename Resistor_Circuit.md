@@ -6,7 +6,18 @@
   Tested on Ubuntu 20.04 LTS with qcodes version 0.33.0, a Yokogawa GS210 and Keithley 2400 were used as equipment
 </p>
 
-## BNC Box Configuration
+# Parts List
+
+| Part | Quantity | Image |
+| :---: | :---: |  :---: |
+| Pair of Banana Cables | 2x | ![cables](/resources/BNC_Resistor_Breakout/parts/cables.jpg) |
+| BNC Enclosure w/ Resistor | 1x | ![enclosure](/resources/BNC_Resistor_Breakout/parts/bnc_box.jpg) |
+| BNC End Cap | 1x | ![end cap](/resources/BNC_Resistor_Breakout/parts/bnc_end_cap.jpg) |
+| BNC Male-Male | 1x | ![bnc male-male](/resources/BNC_Resistor_Breakout/parts/bnc_male_male.jpg) |
+| BNC T Junction | 1x | ![bnc male-male](/resources/BNC_Resistor_Breakout/parts/bnc_t.jpg) |
+| BNC Banana Adapter | 1x | ![bnc male-male](/resources/BNC_Resistor_Breakout/parts/bnc_banana.jpg) |
+
+# BNC Box Configuration
 
 A [Pomona Electronics Shielded Aluminum BNC Enclosure](https://www.mouser.com/ProductDetail/Pomona-Electronics/3752?qs=LxJU1xRJL0FUBcEnm7b%252BpQ%3D%3D) was used for the BNC enclosure. A 7.5kΩ resistor was soldered as shown in the image below:
 
@@ -16,7 +27,7 @@ A [Pomona Electronics Shielded Aluminum BNC Enclosure](https://www.mouser.com/Pr
 
 > It does not have to be exactly 7.5kΩ, anywhere in the range of 1kΩ to 10kΩ should be good
 
-## Circuit Setup
+# Circuit Setup
 
 This is a diagram of how the circuit looks like:
 
@@ -36,19 +47,19 @@ Here is how it should be hooked up to the equipment:
   <img src="/resources/BNC_Resistor_Breakout/equipment_connections.jpg" width="500">
 </p>
 
-## Sample Instrument Configuration
+# Sample Instrument Configuration
 
 This is done taking into account a resistance of 7.5kΩ, but it should work in the range of 1 to 10kΩ.
 
-### GS 210
+## GS 210
 
 The instrument is turned on and is changed to the **mA** setting. The 30V limit is fine.
 
-### Keithley 2400
+## Keithley 2400
 
 The instrument is turned on and the **V** button under **MEAS** is pressed to switch it to the voltage measurement setting. The green **EDIT** button to the right is pressed and the **RANGE** is adjusted to the minimum. Then the **EDIT** button is pressed until the digit after **Cmpl** starts flashing. The **RANGE** of that is also set to a minimum, pressing **ENTER** to save changes.
 
-### Getting Measurements
+## Getting Measurements
 
 The **OUTPUT** button on the *GS 210* is pressed and the output current is set to a value of `0.02000mA`. Then, the **ON/OFF OUTPUT** button on the *Keithley 2400* is pressed and this should display a voltage on the screen.
 

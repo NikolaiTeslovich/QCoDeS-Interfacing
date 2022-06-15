@@ -8,7 +8,7 @@
 
 ## Circuit Setup
 
-![BNC Resistor Circuit Diagram](/resources/BNC_Resistor_Breakout/diagram.jpg)
+![BNC Resistor Circuit Diagram](/resources/BNC_Resistor_Breakout/diagram.png)
 
 ![BNC Resistor Breakout Up-Close](/resources/BNC_Resistor_Breakout/img1.jpg)
 

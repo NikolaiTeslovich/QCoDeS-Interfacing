@@ -18,13 +18,13 @@
 - [x] Hook up the BNC breakout box somehow
 - [ ] Connect some other instruments and come up with an interesting experiment
 
-## Step 1: Configuring the lab computer
+## Step 1: Setting Up The Lab Computer
 
 ### UEFI Secure Boot
 
 ***Important:*** UEFI secure boot must be disabled in BIOS so that the VISA devices can interface with the computer properly.
 
-### Ubuntu installation
+### Ubuntu
 
 [Ubuntu 20.04 LTS](https://releases.ubuntu.com/20.04/) was installed on the lab desktop. 20.04 was used as it is the latest version supported by the National Instrument drivers. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
 
@@ -33,7 +33,7 @@ Then, as soon as the computer is logged into, all the packages are updated to th
 sudo apt update && sudo apt dist-upgrade && sudo reboot
 ```
 
-### Miniconda installation
+### Miniconda
 
 First, miniconda was installed by downloading the latest release with `wget`:
 ```
@@ -50,7 +50,7 @@ Then, execute it:
 ./Miniconda3-latest-Linux-x86_64.sh
 ```
 
-### QCoDeS & python backend installation
+### QCoDeS & Python Backend
 
 To install QCoDeS, first a conda environment was created using python version 3.9, the latest supported by QCoDeS:
 ```
@@ -67,7 +67,7 @@ Next, the latest version of QCoDeS, jupyter lab and other useful packages were i
 pip install qcodes qcodes_contrib_drivers jupyterlab pyvisa-py==0.5.2 pyusb pyserial gpib-ctypes
 ```
 
-### National Instruments driver installation
+### National Instruments Drivers
 
 First, the latest [NI Linux Device Driver](https://www.ni.com/en-us/support/downloads/drivers/download.ni-linux-device-drivers.html#451206) version is downloaded (2022 Q2 at the time of writing). You will have to make an account, but the download is free. The NI drivers will probably end up in the downloads folder of your computer, so enter that directory:
 ```
@@ -119,7 +119,7 @@ The NI kernel drivers are built, and the system is rebooted:
 sudo dkms autoinstall && sudo reboot
 ```
 
-### Configuring USB udev rules
+### Configuring USB udev Rules
 
 For the device to properly work over USB, the udev rules have to be updated. First run the usb device listing command to see what devices are connected to the computer:
 ```
@@ -151,7 +151,7 @@ Then, the system is rebooted with:
 sudo reboot
 ```
 
-### Checking that all packages work
+### Checking That Packages Work
 
 To make sure all the necessary packages work, the following command is run to verify:
 ```
@@ -193,7 +193,7 @@ Backends:
       TCPIP SOCKET: Available
 ```
 
-## Step 2: Starting the notebook
+## Step 2: Starting The Notebook
 
 ### Launching jupyter lab
 
@@ -202,11 +202,11 @@ Jupyter lab can be launched with the following command that activates the qcodes
 conda activate qcodes && cd ~ && jupyter lab
 ```
 
-### Connecting to the instrument(s)
+### Connecting To The Instrument(s)
 
 The [initialization notebook](/QCoDeS_VISA_Init.ipynb) serves as a template from which a connection can be established over VISA.
 
-## Sources used:
+## Sources Used:
 
 - [QCoDeS installation](https://qcodes.github.io/Qcodes/start/index.html)
 - [National Instruments driver installation](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html)

@@ -14,20 +14,24 @@ A [Pomona Electronics Shielded Aluminum BNC Enclosure](https://www.mouser.com/Pr
   <img src="/resources/BNC_Resistor_Breakout/bnc.jpg" width="500">
 </p>
 
-![BNC Resistor Breakout Up-Close](/resources/BNC_Resistor_Breakout/bnc.jpg)
-
 > It does not have to be exactly 7.5kΩ, anywhere in the range of 1kΩ to 10kΩ should be good
 
 ## Circuit Setup
 
 Next, the circuit was built with the diagram below:
 
-![BNC Resistor Circuit Diagram](/resources/BNC_Resistor_Breakout/diagram.png)
+<p align="center">
+  <img src="/resources/BNC_Resistor_Breakout/diagram.png" width="500">
+</p>
 
 This is how it should look like on the bench:
 
-![BNC Circuit Wiring Configuration](/resources/BNC_Resistor_Breakout/connects.jpg)
+<p align="center">
+  <img src="/resources/BNC_Resistor_Breakout/connects.jpg" width="500">
+</p>
 
 Here is how it should be hooked up to the equipment:
 
-![BNC Circuit Equipment Wiring Configuration](/resources/BNC_Resistor_Breakout/equipment_connections.jpg)
+<p align="center">
+  <img src="/resources/BNC_Resistor_Breakout/equipment_connections.jpg" width="500">
+</p>

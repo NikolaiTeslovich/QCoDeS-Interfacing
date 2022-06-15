@@ -1,7 +1,7 @@
 #!/bin/bash
 # Automate a git commit, saving the user several steps
 
-#define colors for colored text
+# define colors for colored text
 green=`tput setaf 2`
 reset=`tput sgr0`
 

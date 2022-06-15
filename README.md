@@ -23,4 +23,4 @@
 Jupyter lab can be launched with the following command that activates the qcodes conda environment and goes into the user's home directory:
 ```
 conda activate qcodes && cd ~ && jupyter lab
-``
+```

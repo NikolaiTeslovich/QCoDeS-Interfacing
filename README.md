@@ -6,9 +6,9 @@
   Interfacing various equipment over the VISA protocol through USB and eventually GPIB with QCoDeS through the development of drivers in jupyter lab.
 </p>
 
-# [Installation and Configuration Guide](/Install.md)
+## [Installation and Configuration Guide](/Install.md)
 
-# To Do:
+## To Do:
 - [x] Prepare the desktop
   - [x] Install Ubuntu on lab desktop
   - [x] Install jupyter lab

@@ -18,13 +18,13 @@ A [Pomona Electronics Shielded Aluminum BNC Enclosure](https://www.mouser.com/Pr
 
 ## Circuit Setup
 
-Next, the circuit was built with the diagram below:
+This is a diagram of how the circuit looks like:
 
 <p align="center">
   <img src="/resources/BNC_Resistor_Breakout/diagram.png" width="500">
 </p>
 
-This is how it should look like on the bench:
+This is how it should look like on the bench. Note that the left two banana plugs are going to the **HI** and **LO** **INPUT/OUTPUT** ports of the *Keithley 2400*. The right two banana plugs are hooked up to the **Hi** and **Lo** **OUTPUT** ports of the *GS 210*:
 
 <p align="center">
   <img src="/resources/BNC_Resistor_Breakout/connections.jpg" width="500">
@@ -35,3 +35,23 @@ Here is how it should be hooked up to the equipment:
 <p align="center">
   <img src="/resources/BNC_Resistor_Breakout/equipment_connections.jpg" width="500">
 </p>
+
+## Sample Instrument Configuration
+
+This is done taking into account a resistance of 7.5kΩ, but it should work in the range of 1 to 10kΩ.
+
+### GS 210
+
+The instrument is turned on and is changed to the **mA** setting. The 30V limit is fine.
+
+### Keithley 2400
+
+The instrument is turned on and the **V** button under **MEAS** is pressed to switch it to the voltage measurement setting. The green **EDIT** button to the right is pressed and the **RANGE** is adjusted to the minimum. Then the **EDIT** button is pressed until the digit after **Cmpl** starts flashing. The **RANGE** of that is also set to a minimum, pressing **ENTER** to save changes.
+
+### Getting Measurements
+
+The **OUTPUT** button on the *GS 210* is pressed and the output current is set to a value of `0.02000mA`. Then, the **ON/OFF OUTPUT** button on the *Keithley 2400* is pressed and this should display a voltage on the screen.
+
+For a resistance of 7.5kΩ, in my experimental setup I get a value of around `142.818mV`.
+
+Using Ohm's law: `V=IR`, the resistance is calculated to be `7.141kΩ`. This verifies that the experimental setup works.

@@ -55,3 +55,5 @@ The **OUTPUT** button on the *GS 210* is pressed and the output current is set t
 For a resistance of 7.5kΩ, in my experimental setup I get a value of around `142.818mV`.
 
 Using Ohm's law: `V=IR`, the resistance is calculated to be `7.141kΩ`. This verifies that the experimental setup works.
+
+> Now wouldn't it be interesting to automate this, and see how the resistance changes based on the applied voltage? This could be automated with QCoDeS!

@@ -6,6 +6,20 @@
   Interfacing various equipment through Ethernet and GPIB with QCoDeS through the development of drivers and accompanying programs in python, initially in jupyter lab.
 </p>
 
+- [To Do:](#to-do-)
+- [Step 1: Setting Up The Lab Computer](#step-1--setting-up-the-lab-computer)
+  * [UEFI Secure Boot](#uefi-secure-boot)
+  * [Ubuntu](#ubuntu)
+  * [Miniconda](#miniconda)
+  * [QCoDeS & Python Backend](#qcodes---python-backend)
+  * [National Instruments Drivers](#national-instruments-drivers)
+  * [Configuring USB udev Rules](#configuring-usb-udev-rules)
+  * [Checking That Packages Work](#checking-that-packages-work)
+- [Step 2: Starting The Notebook](#step-2--starting-the-notebook)
+  * [Launching jupyter lab](#launching-jupyter-lab)
+  * [Connecting To The Instrument(s)](#connecting-to-the-instrument-s-)
+- [Sources Used:](#sources-used-)
+
 ## To Do:
 - [x] Prepare the desktop
   - [x] Install Ubuntu on lab desktop

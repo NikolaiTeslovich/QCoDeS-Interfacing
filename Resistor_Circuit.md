@@ -27,7 +27,7 @@ Next, the circuit was built with the diagram below:
 This is how it should look like on the bench:
 
 <p align="center">
-  <img src="/resources/BNC_Resistor_Breakout/connects.jpg" width="500">
+  <img src="/resources/BNC_Resistor_Breakout/connections.jpg" width="500">
 </p>
 
 Here is how it should be hooked up to the equipment:

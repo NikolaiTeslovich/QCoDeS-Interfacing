@@ -10,8 +10,8 @@
 
 ![BNC Resistor Circuit Diagram](/resources/BNC_Resistor_Breakout/diagram.png)
 
-![BNC Resistor Breakout Up-Close](/resources/BNC_Resistor_Breakout/img1.jpg)
+![BNC Resistor Breakout Up-Close](/resources/BNC_Resistor_Breakout/bnc.jpg)
 
-![BNC Circuit Wiring Configuration](/resources/BNC_Resistor_Breakout/img2.jpg)
+![BNC Circuit Wiring Configuration](/resources/BNC_Resistor_Breakout/connects.jpg)
 
-![BNC Circuit Equipment Wiring Configuration](/resources/BNC_Resistor_Breakout/img3.jpg)
+![BNC Circuit Equipment Wiring Configuration](/resources/BNC_Resistor_Breakout/equipment_connections.jpg)

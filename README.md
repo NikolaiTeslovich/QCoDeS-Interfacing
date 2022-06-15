@@ -6,6 +6,10 @@
   <a href="/Install.md">Installation & Configuration Guide</a>
 </h3>
 
+<h3 align="center">
+  <a href="/Resistor_Circuit.md">Sample Experiment</a>
+</h3>
+
 <p align="center">
   Interfacing various equipment over the VISA protocol through USB and eventually GPIB with QCoDeS through the development of drivers in jupyter lab.
 </p>

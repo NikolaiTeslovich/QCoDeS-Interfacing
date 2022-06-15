@@ -6,8 +6,6 @@
   Tested on Ubuntu 20.04 LTS with qcodes version 0.33.0
 </p>
 
-# Setting Up The Computer
-
 ## UEFI Secure Boot
 
 ***Important:*** UEFI secure boot must be disabled in BIOS so that the VISA devices can interface with the computer properly.
@@ -183,14 +181,13 @@ Backends:
 
 ## Diagnosing Connected Instruments
 The [initialization notebook](/Initialization_Guide.ipynb) serves as a template from which a connection can be established over VISA. Plugin at least one instrument over USB, and check that it's being detected by the National Instruments backend by cloning this repository and going through the diagnostic notebook with filename `Initialization_Guide.ipynb`:
-
 ```
 git clone git@github.coecis.cornell.edu:Fatemi-Lab/QCoDeS-Interfacing && cd QCoDeS-Interfacing && jupyter lab
 ```
 
 > Note that because this is enterprise GitHub, you have to [create and add a SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-# Sources Used:
+## Sources Used:
 
 - [QCoDeS installation](https://qcodes.github.io/Qcodes/start/index.html)
 - [National Instruments driver installation](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html)

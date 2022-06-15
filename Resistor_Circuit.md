@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  Tested on Ubuntu 20.04 LTS with qcodes version 0.33.0 and a Yokogawa GS210 and Keithley 2400
+  Tested on Ubuntu 20.04 LTS with qcodes version 0.33.0, a Yokogawa GS210 and Keithley 2400 were used as equipment
 </p>
 
 ## Circuit Setup

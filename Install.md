@@ -1,30 +1,18 @@
 <h1 align="center">
-  QCoDeS-Interfacing
+  Complete Setup Guide
 </h1>
 
 <p align="center">
-  Interfacing various equipment over the VISA protocol through USB and eventually GPIB with QCoDeS through the development of drivers and accompanying programs in python, initially in jupyter lab.
+  Tested on Ubuntu 20.04 LTS with qcodes version 0.33.0
 </p>
 
-## To Do:
-- [x] Prepare the desktop
-  - [x] Install Ubuntu on lab desktop
-  - [x] Install jupyter lab
-  - [x] Install miniconda
-  - [x] Install QCoDeS
-- [x] Go through the QCoDeS tutorial again
-- [x] Interface with the Yokogawa GS200 over USB
-- [x] Find a safer way to interact with the instrument apart from enabling USB sudo access
-- [x] Hook up the BNC breakout box somehow
-- [ ] Connect some other instruments and come up with an interesting experiment
+# Setting Up The Computer
 
-## Step 1: Setting Up The Lab Computer
-
-### UEFI Secure Boot
+## UEFI Secure Boot
 
 ***Important:*** UEFI secure boot must be disabled in BIOS so that the VISA devices can interface with the computer properly.
 
-### Ubuntu
+## Ubuntu Install
 
 [Ubuntu 20.04 LTS](https://releases.ubuntu.com/20.04/) was installed on the lab desktop. 20.04 was used as it is the latest version supported by the National Instrument drivers. I used [balenaEtcher](https://www.balena.io/etcher/) to create the installation media.
 
@@ -33,7 +21,7 @@ Then, as soon as the computer is logged into, all the packages are updated to th
 sudo apt update && sudo apt dist-upgrade && sudo reboot
 ```
 
-### Miniconda
+## Miniconda Install
 
 First, miniconda was installed by downloading the latest release with `wget`:
 ```
@@ -50,7 +38,7 @@ Then, execute it:
 ./Miniconda3-latest-Linux-x86_64.sh
 ```
 
-### QCoDeS & Python Backend
+## QCoDeS & Python Backend Install
 
 To install QCoDeS, first a conda environment was created using python version 3.9, the latest supported by QCoDeS:
 ```
@@ -67,7 +55,7 @@ Next, the latest version of QCoDeS, jupyter lab and other useful packages were i
 pip install qcodes qcodes_contrib_drivers jupyterlab pyvisa-py==0.5.2 pyusb pyserial gpib-ctypes
 ```
 
-### National Instruments Drivers
+## National Instruments Drivers Install
 
 First, the latest [NI Linux Device Driver](https://www.ni.com/en-us/support/downloads/drivers/download.ni-linux-device-drivers.html#451206) version is downloaded (2022 Q2 at the time of writing). You will have to make an account, but the download is free. The NI drivers will probably end up in the downloads folder of your computer, so enter that directory:
 ```
@@ -119,7 +107,7 @@ The NI kernel drivers are built, and the system is rebooted:
 sudo dkms autoinstall && sudo reboot
 ```
 
-### Configuring USB udev Rules
+## USB udev Rules Configuration
 
 For the device to properly work over USB, the udev rules have to be updated. First run the usb device listing command to see what devices are connected to the computer:
 ```
@@ -151,7 +139,7 @@ Then, the system is rebooted with:
 sudo reboot
 ```
 
-### Checking That Packages Work
+## Diagnosing The Packages
 
 To make sure all the necessary packages work, the following command is run to verify:
 ```
@@ -192,22 +180,3 @@ Backends:
       TCPIP INSTR: Available
       TCPIP SOCKET: Available
 ```
-
-## Step 2: Starting The Notebook
-
-### Launching jupyter lab
-
-Jupyter lab can be launched with the following command that activates the qcodes conda environment and goes into the user's home directory:
-```
-conda activate qcodes && cd ~ && jupyter lab
-```
-
-### Connecting To The Instrument(s)
-
-The [initialization notebook](/Initialization_Guide.ipynb) serves as a template from which a connection can be established over VISA.
-
-## Sources Used:
-
-- [QCoDeS installation](https://qcodes.github.io/Qcodes/start/index.html)
-- [National Instruments driver installation](https://www.ni.com/en-us/support/documentation/supplemental/18/downloading-and-installing-ni-driver-software-on-linux-desktop.html)
-- [udev permissions](https://askubuntu.com/a/1073159)

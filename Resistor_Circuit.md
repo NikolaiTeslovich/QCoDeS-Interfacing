@@ -8,8 +8,8 @@
 
 ## Circuit Setup
 
-![BNC Resistor Breakout Up-Close](/resources/BNC_Resistor_Breakout/img1.jpeg)
+![BNC Resistor Breakout Up-Close](/resources/BNC_Resistor_Breakout/img1.jpg)
 
-![BNC Circuit Wiring Configuration](/resources/BNC_Resistor_Breakout/img2.jpeg)
+![BNC Circuit Wiring Configuration](/resources/BNC_Resistor_Breakout/img2.jpg)
 
-![BNC Circuit Equipment Wiring Configuration](/resources/BNC_Resistor_Breakout/img3.jpeg)
+![BNC Circuit Equipment Wiring Configuration](/resources/BNC_Resistor_Breakout/img3.jpg)

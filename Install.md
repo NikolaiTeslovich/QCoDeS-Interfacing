@@ -141,7 +141,7 @@ sudo reboot
 
 To make sure all the necessary packages work, the following command is run to verify:
 ```
-conda activate qcodes && pyvisa -info
+conda activate qcodes && pyvisa-info
 ```
 
 The output should look something like this:

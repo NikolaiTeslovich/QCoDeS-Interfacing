@@ -86,7 +86,8 @@ install_linux_gpib()
 {
     cd /opt
     # test for directory where linux-gpib will be installed
-    if [ -d "linux-gpib-${LINUX_GPIB_VER}" ];
+    if [ -d "linux-gpib-${LINUX_GPIB_VER}" ];head -n1 /etc/rc.local
+
     then
         while true; do
             read -p "Install directory for linux-gpib-${LINUX_GPIB_VER} already exists. Do you wish to uninstall it first? " yn
@@ -112,6 +113,8 @@ install_linux_gpib()
     sudo make install
 
     cd ..
+    # install python dev for the command to be used
+    sudo apt install python-dev
     cd linux-gpib-user-${LINUX_GPIB_VER}
     # compile linux-gpib python bindings
     cd language/python
@@ -147,24 +150,12 @@ install_linux_gpib()
     sudo wget http://linux-gpib.sourceforge.net/firmware/gpib_firmware-2008-08-10.tar.gz
     sudo tar xvzf gpib_firmware-2008-08-10.tar.gz
 
-    sudo cp -r gpib_firmware-2008-08-10 /usr/share/usb
-    # sudo cp gpib_firmware-2008-08-10/agilent_82357a/82357a_fw.hex /usr/share/usb/agilent_82357a/
-    # sudo cp gpib_firmware-2008-08-10/agilent_82357a/measat_releaseX1.8.hex /usr/share/usb/agilent_82357a/
-    # sudo cp gpib_firmware-2008-08-10/ni_gpib_usb_b/niusbb_loader.hex /usr/share/usb/ni_usb_gpib/
-    # sudo cp gpib_firmware-2008-08-10/ni_gpib_usb_b/niusbb_firmware.hex /usr/share/usb/ni_usb_gpib/
+    #sudo cp -r gpib_firmware-2008-08-10 /usr/share/usb
+    sudo cp gpib_firmware-2008-08-10/agilent_82357a/82357a_fw.hex /usr/share/usb/agilent_82357a/
+    sudo cp gpib_firmware-2008-08-10/agilent_82357a/measat_releaseX1.8.hex /usr/share/usb/agilent_82357a/
+    sudo cp gpib_firmware-2008-08-10/ni_gpib_usb_b/niusbb_loader.hex /usr/share/usb/ni_usb_gpib/
+    sudo cp gpib_firmware-2008-08-10/ni_gpib_usb_b/niusbb_firmware.hex /usr/share/usb/ni_usb_gpib/
     sudo apt -y install fxload
-
-    if lsusb | grep -q '0957:0518'; then
-        sudo sed -i 's/ni_pci/agilent_82357a/g' ${GPIB_FILE_PATH}${GPIB_FILE}
-        echo "Agilent 82357B found"
-        sudo modprobe agilent_82357a
-    fi
-
-    if lsusb | grep -q '0957:0718'; then
-        sudo sed -i 's/ni_pci/agilent_82357a/g' ${GPIB_FILE_PATH}${GPIB_FILE}
-        echo "Agilent 82357B found"
-        sudo modprobe agilent_82357a
-    fi
 
     if lsusb | grep -q '3923:709b'; then
         sudo sed -i 's/ni_pci/ni_usb_b/g' ${GPIB_FILE_PATH}${GPIB_FILE}

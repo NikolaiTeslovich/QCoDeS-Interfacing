@@ -28,3 +28,4 @@ https://ubuntuforums.org/showthread.php?t=2270802
 https://rfpoweramp.com/2014/07/26/setting-up-ni-gpib-usb-hs-under-linux/
 https://github.com/fmhess/hsplus_load
 https://xdevs.com/guide/ni_gpib_rpi/
+https://sourceforge.net/p/linux-gpib/support-requests/29/

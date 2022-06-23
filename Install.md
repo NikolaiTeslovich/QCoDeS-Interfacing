@@ -97,7 +97,7 @@ sudo apt update
 
 Then, the NI visa backend is installed from a [list of other available packages](https://www.ni.com/pdf/manuals/378353g.html):
 ```
-sudo apt install ni-visa
+sudo apt install ni-448.2 ni-visa
 ```
 
 The NI kernel drivers are built, and the system is rebooted:
@@ -127,7 +127,7 @@ From this, we can see that `Bus 001 Device 005: ID 0b21:0039 Yokogawa Electric C
 The udev permission is then updated with the following command, creating the file `visa.rules` with the new rule:
 
 ```
-echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="vendor id", ATTRS{idProduct}=="product id", MODE="0666"' 
+echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="vendor id", ATTRS{idProduct}=="product id", MODE="0666"'
 | sudo tee --append /etc/udev/rules.d/visa.rules
 ```
 > Note that this command to update the udev rules can be run many times, adding all the necessary USB instruments

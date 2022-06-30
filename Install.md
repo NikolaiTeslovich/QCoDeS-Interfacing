@@ -97,7 +97,7 @@ sudo apt update
 
 Then, the NI visa backend is installed from a [list of other available packages](https://www.ni.com/pdf/manuals/378353g.html):
 ```
-sudo apt install ni-448.2 ni-visa
+sudo apt install ni-488.2 ni-visa
 ```
 
 The NI kernel drivers are built, and the system is rebooted:

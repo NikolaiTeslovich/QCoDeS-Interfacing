@@ -1,5 +1,5 @@
 <h1 align="center">
-  Complete Setup Guide
+  USB GS210 QCoDeS Complete Setup Guide
 </h1>
 
 <p align="center">

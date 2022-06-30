@@ -97,7 +97,7 @@ sudo apt update
 
 Then, the NI visa backend is installed from a [list of other available packages](https://www.ni.com/pdf/manuals/378353g.html):
 ```
-sudo apt install ni-488.2 ni-visa
+sudo apt install ni-visa
 ```
 
 The NI kernel drivers are built, and the system is rebooted:
@@ -180,7 +180,7 @@ Backends:
 ```
 
 ## Diagnosing Connected Instruments
-The [initialization notebook](/Initialization_Guide.ipynb) serves as a template from which a connection can be established over VISA. Plugin at least one instrument over USB, and check that it's being detected by the National Instruments backend by cloning this repository and going through the diagnostic notebook with filename `Initialization_Guide.ipynb`:
+The [initialization notebook](/GS210/Initialization_Guide.ipynb) serves as a template from which a connection can be established over VISA. Plugin at least one instrument over USB, and check that it's being detected by the National Instruments backend by cloning this repository and going through the diagnostic notebook with filename `Initialization_Guide.ipynb`:
 ```
 git clone git@github.coecis.cornell.edu:Fatemi-Lab/QCoDeS-Interfacing && cd QCoDeS-Interfacing && jupyter lab
 ```

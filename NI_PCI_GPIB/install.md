@@ -40,6 +40,31 @@ From this, we get its ip address followed by inet. We can now disconnect the mon
 ssh <user>@<ip addr>
 ```
 
+Jupyter Notebook usage: 
+
+On the remote desktop, start up the necessary drivers and programs:
+```
+sudo modprobe tnt4882 && sudo ldconfig && sudo gpib_config
+```
+
+lsmod can be run to check and make sure that the correct drivers are loaded:
+```
+lsmod
+```
+
+Next, user permissions are given to the GPIB files: 
+```
+sudo chmod 700 /dev/gpib*
+
+on the server through ssh:
+```
+jupyter lab --no-browser --port=8889
+```
+on your computer or desktop:
+```
+ssh -N -f -L localhost:8888:localhost:8889 user@128.253.10.249
+```
+
 Then, we essentially followed these steps step by step:
 
 follow the chinese guide basically step-by-step:

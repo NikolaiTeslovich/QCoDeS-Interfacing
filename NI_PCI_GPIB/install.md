@@ -44,7 +44,7 @@ Jupyter Notebook usage:
 
 On the remote desktop, start up the necessary drivers and programs:
 ```
-sudo modprobe tnt4882 && sudo ldconfig && sudo gpib_config
+sudo modprobe tnt4882 && sudo ldconfig && sudo gpib_config && sudo chmod 777 /dev/gpib*
 ```
 
 lsmod can be run to check and make sure that the correct drivers are loaded:
@@ -70,7 +70,7 @@ UDEV rules: `KERNEL=="gpib[0-9]*", ACTION=="add", MODE="660", GROUP="username"`
 
 pci:
 ```
-SUBSYSTEM=="pci", KERNELS=="04:03.0", MODE=="0666"
+ACTION=="add", SUBSYSTEM=="pci", KERNELS=="04:03.0", MODE=="0666"
 ```
 
 Then, we essentially followed these steps step by step:
@@ -79,4 +79,8 @@ follow the chinese guide basically step-by-step:
 
 https://arakiliu.github.io/2020/12/22/raspi-usb-gpib/
 
-
+I did a very naughty thing here, don't repeat:
+```
+SUBSYSTEM=="pci", ACTION=="add", KERNELS=="04:03.0", MODE=="0777"
+KERNEL=="gpib[0-9]*", ACTION=="add", MODE=="0777"
+```

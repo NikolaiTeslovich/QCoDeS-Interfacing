@@ -6,6 +6,8 @@
   Tested on Ubuntu Server 20.04 with qcodes version 0.33.0
 </p>
 
+https://linux-gpib.sourceforge.io/doc_html/supported-hardware.html
+
 ## But does it work on Ubuntu Server 22.04? Test that out!
 ## Does it depend on any of the NI drivers also?
 
@@ -15,37 +17,33 @@
 
 Then, log into the server and check the MAC address:
 ```
-ip -o link | awk '$2 != "lo:" {print $2, $(NF-2)}'
+ip addr
 ```
 
-You should get an output like this, and we want to take the eth0 ip address:
-
-Then, [register the device through the Cornell Network](https://it.cornell.edu/wifi-wired/register-device-doesnt-have-browser) and restart for the rule to be updated and the network to work:
-
+From this output, we want to take the MAC address of whatever interface we will be connecting to, probably ethernet. The MAC address is in the form ff:ff:ff:ff:ff:ff. Then, [register the device through the Cornell Network](https://it.cornell.edu/wifi-wired/register-device-doesnt-have-browser) and restart for the rule to be updated and the network to work:
 ```
 sudo reboot
 ```
 
-as soon as the computer is logged into, all the packages are updated to their latest versions, ifconfig is installed and the computer is rebooted:
+After the computer reboots, log into it. All the packages are updated to their latest versions, ifconfig is installed and the computer is rebooted:
 ```
 sudo apt update && sudo apt dist-upgrade sudo apt install ifconfig && sudo reboot
 ```
 
 Logging into the computer again, we run:
+```
+ip addr
+```
 
+From this, we get its ip address followed by inet. We can now disconnect the monitor, keyboard and mouse and use our main computer to remotely connect to this GPIB server. It is connected like this:
 ```
-ifconfig
+ssh <user>@<ip addr>
 ```
 
-```
-ssh ip@
-```
+Then, we essentially followed these steps step by step:
 
 follow the chinese guide basically step-by-step:
 
 https://arakiliu.github.io/2020/12/22/raspi-usb-gpib/
-
-### Add your computer to the Cornell Network 
-### Check the MAC address and then the IP using ifconfig
 
 

@@ -54,7 +54,8 @@ lsmod
 
 Next, user permissions are given to the GPIB files: 
 ```
-sudo chmod 700 /dev/gpib*
+sudo chmod 777 /dev/gpib*
+```
 
 on the server through ssh:
 ```
@@ -63,6 +64,13 @@ jupyter lab --no-browser --port=8889
 on your computer or desktop:
 ```
 ssh -N -f -L localhost:8888:localhost:8889 user@128.253.10.249
+```
+
+UDEV rules: `KERNEL=="gpib[0-9]*", ACTION=="add", MODE="660", GROUP="username"`
+
+pci:
+```
+SUBSYSTEM=="pci", KERNELS=="04:03.0", MODE=="0666"
 ```
 
 Then, we essentially followed these steps step by step:

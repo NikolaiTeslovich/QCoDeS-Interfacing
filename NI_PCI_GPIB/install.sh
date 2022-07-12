@@ -18,11 +18,13 @@ cd ~/linux-gpib/linux-gpib-code/linux-gpib-kernel
 
 sudo make && sudo make install
 
-## install the packages at the user level
+# install the packages at the user level
 
 cd ~/linux-gpib/linux-gpib-code/linux-gpib-user
 
 sudo ./bootstrap && sudo ./configure && sudo make && sudo make install
+
+# enter the current gpib configuration file in nano to make the necessarty edits
 
 sudo nano /usr/local/etc/gpib.conf
 

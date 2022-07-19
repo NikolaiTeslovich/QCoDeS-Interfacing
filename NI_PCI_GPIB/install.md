@@ -7,7 +7,7 @@
 
 https://linux-gpib.sourceforge.io/doc_html/supported-hardware.html
 
-## Ubuntu Install
+## Ubuntu Install & Network Config
 
 Install the latest version of [Ubuntu Server](https://ubuntu.com/download/server#downloads) on the target desktop, using the default installation options and making sure that the **Install OpenSSH server** checkmark was checked. The installation media was created with [balenaEtcher](https://www.balena.io/etcher/).
 
@@ -21,12 +21,7 @@ From this output, we want to take the MAC address of whatever interface we will 
 sudo reboot
 ```
 
-After the computer reboots, log into it. Update all the packages and reboot once more to reload the kernel:
-```
-sudo apt update && sudo apt dist-upgrade && sudo reboot
-```
-
-To get the IP address of the desktop, login to it once more and run the following command:
+After the computer reboots, login to it once more and run the following command to get its ip address:
 ```
 ip addr
 ```
@@ -36,17 +31,28 @@ From this, we get its ip address followed by inet. We can now disconnect the mon
 ssh <username>@<ip addr>
 ```
 
-Once we are connected, there are two options to go forward with the installation:
-- 1. Use an installation script (recommended)
-- 2. Manually install 
+After logging into it over ssh, update all the packages and reboot once more to reload the kernel:
+```
+sudo apt update && sudo apt dist-upgrade && sudo reboot
 ```
 
-## The installation script approach
+Then, connect to it once more with the same command as in the previous step: 
+```
+ssh <username>@<ip addr>
+```
+
+> This command should be used for all subsequent connection attempts
+
+## Linux-GPIB Script Install
+
+This is all done logged into the remote desktop obviously.
 
 First, the repository containing the script is cloned:
 ```
 cd ~ && git clone git@github.coecis.cornell.edu:Fatemi-Lab/QCoDeS-Interfacing.git
 ```
+
+> Note that because this is enterprise GitHub, you have to [create and add a SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 Then, the script is given the necessary permissions: 
 ```
@@ -58,11 +64,13 @@ Then it is executed:
 ./QCoDeS-Interfacing/NI_PCI_GPIB/install.sh
 ```
 
-Once the script has finished, reboot the computer with the following command and idea to have it work correctly and forever. 
-
-
-sudo apt-get install -y git tk-dev build-essential texinfo texi2html libcwidget-dev libncurses5-dev libx11-dev binutils-dev bison flex libusb-1.0-0 libusb-dev libmpfr-dev libexpat1-dev tofrodos subversion autoconf automake libtool python3-dev python3-pip
+Once the script has finished, the `GPIB.conf` will need to be modified. I prefer to use nano, but vim can also be used:
 ```
+sudo nano /usr/local/etc/gpib.conf
+```
+tnt4882 will need to be inserted after the place where the files are to be kept
+
+## Day-to-day Usage
 
 Jupyter Notebook usage: 
 
@@ -71,27 +79,17 @@ On the remote desktop, start up the necessary drivers and programs:
 sudo modprobe tnt4882 && sudo ldconfig && sudo gpib_config 
 ```
 
-on the server through ssh:
+Then, run the following command to forward the port on the local network
 ```
 sudo jupyter lab --no-browser --port=8889 --allow-root
 ```
 
+> the notebook is run under root as this is the only approach I found to work 
+
 on your computer or desktop:
 ```
-ssh -N -f -L localhost:8888:localhost:8889 user@128.253.10.249
+ssh -N -f -L localhost:8888:localhost:8889 <username>@<ip addr>
 ```
-
-UDEV rules: `KERNEL=="gpib[0-9]*", ACTION=="add", MODE="660", GROUP="username"`
-
-Next, the gpib.conf file has to be properly configurated
-
-# enter the current gpib configuration file in nano to make the necessarty edits
-sudo nano /usr/local/etc/gpib.conf
-
-
-Then, we essentially followed these steps step by step:
-
-follow the chinese guide basically step-by-step:
 
 https://arakiliu.github.io/2020/12/22/raspi-usb-gpib/
 

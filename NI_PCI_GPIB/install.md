@@ -68,7 +68,8 @@ Once the script has finished, the `GPIB.conf` will need to be modified. I prefer
 ```
 sudo nano /usr/local/etc/gpib.conf
 ```
-tnt4882 will need to be inserted after the place where the files are to be kept
+
+> replace what is after `board_type = ` with `"tnt4882"`
 
 ## Day-to-day Usage
 
@@ -79,6 +80,12 @@ On the remote desktop, start up the necessary drivers and programs:
 sudo modprobe tnt4882 && sudo ldconfig && sudo gpib_config 
 ```
 
+To test that the connections are working, run the following command:
+
+```
+sudo ibtest
+```
+
 Then, run the following command to forward the port on the local network
 ```
 sudo jupyter lab --no-browser --port=8889 --allow-root
@@ -86,10 +93,14 @@ sudo jupyter lab --no-browser --port=8889 --allow-root
 
 > the notebook is run under root as this is the only approach I found to work 
 
-on your computer or desktop:
+On your computer or desktop:
 ```
 ssh -N -f -L localhost:8888:localhost:8889 <username>@<ip addr>
 ```
 
-https://arakiliu.github.io/2020/12/22/raspi-usb-gpib/
+Then, open a browser and go to [localhost:8888](localhost:8888), the key is what is at the end of the url of the command-line-output of the server.
+
+## Sources:
+
+- https://arakiliu.github.io/2020/12/22/raspi-usb-gpib/
 

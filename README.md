@@ -6,6 +6,9 @@
   Interfacing with various equipment, specifically the Yokogama GS210 and Keithley 2400 over the VISA protocol through USB and GPIB with QCoDeS in Jupyter Lab.
 </p>
 
+## To-Do!
+- find directory where the experiments are and find the experimental findings
+
 ## NI-PCI GPIB Adapter
 - [Installation Guide](/NI_PCI_GPIB/install.md)
 - [Initialization Notebook](/NI_PCI_GPIB/Initialization_GPIB.ipynb)

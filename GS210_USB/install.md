@@ -1,9 +1,9 @@
 <h1 align="center">
-  USB GS210 QCoDeS Complete Setup Guide
+  USB GS210 QCoDeS Installation Guide
 </h1>
 
 <p align="center">
-  Tested on Ubuntu 20.04 LTS with qcodes version 0.33.0
+  Tested on Ubuntu 20.04 LTS
 </p>
 
 ## UEFI Secure Boot

@@ -1,5 +1,5 @@
 <h1 align="center">
-  GPIB QCoDeS Complete Setup Guide
+  NI-PCI GPIB Adapter Installation Guide
 </h1>
 
 <p align="center">

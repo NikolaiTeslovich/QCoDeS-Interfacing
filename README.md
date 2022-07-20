@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  Interfacing with various equipment with [QCoDeS](https://github.com/QCoDeS) over the VISA protocol through USB and GPIB
+  Interfacing with various equipment with QCoDeS over the VISA protocol through USB and GPIB
 </p>
 
 Picture this, you have recently acquired a lab space with a lot of old equipment, some of which hasn't been used for literal decades. It's a safe to say that practically all of it uses the GPIB interface, and if not, likely USB. Why buy new expensive equipment when the old equipment is still good? 

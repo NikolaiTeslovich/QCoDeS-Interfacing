@@ -3,6 +3,10 @@
 </h1>
 
 <p align="center">
+  <img src="/resources/QCoDeS-Interfacing.png" width="200" height="200">
+</p>
+
+<p align="center">
   Interfacing with various equipment with QCoDeS over the VISA protocol through USB and GPIB
 </p>
 

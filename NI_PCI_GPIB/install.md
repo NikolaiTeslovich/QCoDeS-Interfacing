@@ -91,12 +91,12 @@ sudo jupyter lab --no-browser --port=8889 --allow-root
 
 > the notebook is run under root as this is the only approach I found to work 
 
-On your computer or desktop:
+Accept the forwarded port on your computer or desktop:
 ```
 ssh -N -f -L localhost:8888:localhost:8889 <username>@<ip addr>
 ```
 
-Then, open a browser and go to [localhost:8888](localhost:8888), the key is what is at the end of the url of the command-line-output of the server.
+Then, open a browser and go to [localhost:8888](//localhost:8888/), the key is what is at the end of the url of the command-line-output of the server.
 
 ## Sources:
 

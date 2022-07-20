@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  Interfacing with various equipment over the VISA protocol through USB and GPIB with QCoDeS
+  Interfacing with various equipment with [QCoDeS](https://github.com/QCoDeS) over the VISA protocol through USB and GPIB
 </p>
 
 Picture this, you have recently acquired a lab space with a lot of old equipment, some of which hasn't been used for literal decades. It's a safe to say that practically all of it uses the GPIB interface, and if not, likely USB. Why buy new expensive equipment when the old equipment is still good? 
@@ -23,13 +23,13 @@ After a simple installation of Linux and some drivers and packages as detailed i
 - VISA over USB
 
 ## Linux GPIB
-Written for and tested on **NI-PCI GPIB Adapter** `tnt4882` with **Yokogawa GS210** & **Keithley 2400** on **Ubuntu Server 20.04 LTS** & **Ubuntu Server 22.04 LTS**
+Written for and tested on a `NI-PCI GPIB Adapter` with a `Yokogawa GS210` & `Keithley 2400` on `Ubuntu Server 20.04 LTS` & `Ubuntu Server 22.04 LTS`
 - [Installation Guide](/NI_PCI_GPIB/install.md)
 - [Initialization Notebook](/NI_PCI_GPIB/Initialization_GPIB.ipynb)
 - [QCoDeS R/G LED Sweep Notebook](/NI_PCI_GPIB/leds_sweep_+200mA.ipynb)
 
 ## VISA over USB
-Written for and tested on **Yokogawa GS210** with **Ubuntu 20.04 LTS** non-server
+Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`
 - [Installation Guide](/GS210_USB/install.md)
 - [Initialization Notebook](/GS210_USB/Initialization_Guide.ipynb)
 - [QCoDeS Sweep Notebook](/GS210_USB/QCoDeS-GS210.ipynb)
@@ -43,7 +43,7 @@ Written for and tested on **Yokogawa GS210** with **Ubuntu 20.04 LTS** non-serve
 - [PyVisa Docs](https://pyvisa.readthedocs.io/en/latest/)
 
 ## Non-Interfacing Experiment
-Written for and tested on **Yokogawa GS210** & **Keithley 2400**
+Written for and tested on a `Yokogawa GS210` & `Keithley 2400`
 - [Resistor Experiment](/resources/Resistor_Circuit.md)
 
 ## Future Prospects
@@ -56,4 +56,4 @@ Here are some interesting results that I got from sweeping the current while mea
   <img src="/resources/GreenvsRed.jpg" width="400">
 </p>
 
-Check out the [notebook itself](/NI_PCI_GPIB/leds_sweep_+200mA.ipynb)
+> Check out the [notebook itself](/NI_PCI_GPIB/leds_sweep_+200mA.ipynb)

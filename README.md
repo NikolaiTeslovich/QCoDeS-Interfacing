@@ -7,7 +7,8 @@
 </p>
 
 ## Purpose
-Picture this, you have recently acquired a lab space with a lot of old equipment, some of which hasn't been used for literal decades. It's a safe to say that practically all of it uses the GPIB interface, and if not, likely USB. Why buy new expensive equipment when the old equipment is still exteremely good?  
+Picture this, you have recently acquired a lab space with a lot of old equipment, some of which hasn't been used for literal decades. It's a safe to say that practically all of it uses the GPIB interface, and if not, likely USB. Why buy new expensive equipment when the old equipment is still exteremely good? What if you also happened to find a desktop that is older than some of the undergrads working at your lab and uses a NI-PCI GPIB Adapter from 1998? 
+> Linux really runs on anything, so let's put it to good use!
 
 ## To-Do!
 - [ ] find directory where the experiments are

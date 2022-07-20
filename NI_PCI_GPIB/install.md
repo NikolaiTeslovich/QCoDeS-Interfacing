@@ -5,8 +5,6 @@
 <p align="center">
   Tested on Ubuntu Server 20.04 & 22.04
 
-https://linux-gpib.sourceforge.io/doc_html/supported-hardware.html
-
 ## Ubuntu Install & Network Config
 
 Install the latest version of [Ubuntu Server](https://ubuntu.com/download/server#downloads) on the target desktop, using the default installation options and making sure that the **Install OpenSSH server** checkmark was checked. The installation media was created with [balenaEtcher](https://www.balena.io/etcher/).
@@ -69,7 +67,7 @@ Once the script has finished, the `GPIB.conf` will need to be modified. I prefer
 sudo nano /usr/local/etc/gpib.conf
 ```
 
-> replace what is after `board_type = ` with `"tnt4882"`
+> replace what is after `board_type =` with `"tnt4882"`
 
 ## Day-to-day Usage
 

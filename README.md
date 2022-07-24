@@ -29,13 +29,13 @@ After a simple installation of Linux and some drivers and packages as detailed i
 - [Linux GPIB](https://linux-gpib.sourceforge.io/doc_html/supported-hardware.html)
 - VISA over USB
 
-## Linux GPIB
+## GPIB Instrument(s)
 Written for and tested on a `NI-PCI GPIB Adapter` with a `Yokogawa GS210` & `Keithley 2400` on `Ubuntu Server 20.04 LTS` & `Ubuntu Server 22.04 LTS`
 - [Installation Guide](/GPIB/install.md)
 - [Initialization Notebook](/GPIB/initialization_GPIB.ipynb)
 - [QCoDeS R/G LED Sweep Notebook](/GPIB/leds_sweep.ipynb)
 
-## VISA over USB
+## USB Instrument(s)
 Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`
 - [Installation Guide](/USB/install.md)
 - [Initialization Notebook](/USB/initialization_guide.ipynb)

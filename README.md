@@ -6,10 +6,6 @@
   <img src="/resources/QCoDeS-Interfacing.png" width="200" height="200">
 </p>
 
-<p align="center">
-  Interfacing with instruments over QCoDeS
-</p>
-
 Picture this, you have recently acquired a lab space with a lot of old equipment, some of which hasn't been used for literal decades. It's a safe to say that practically all of it uses the GPIB interface, and if not, likely USB. Why buy new expensive equipment when the old equipment is still good? 
 
 Instead of using ugly, proprietary software from some company, why not do everything in python, specifically in QCoDeS?

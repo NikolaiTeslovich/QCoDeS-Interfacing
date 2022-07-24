@@ -10,19 +10,19 @@
 
 | Part | Quantity | Image |
 | :---: | :---: |  :---: |
-| Pair of Banana Cables | 2x | <img src="/resources/BNC_Resistor_Breakout/parts/cables.jpg" width="400"> |
-| BNC Enclosure w/ Resistor | 1x | <img src="/resources/BNC_Resistor_Breakout/bnc.jpg" width="400"> |
-| BNC End Cap | 1x | <img src="/resources/BNC_Resistor_Breakout/parts/bnc_end_cap.jpg" width="400"> |
-| BNC Male-Male | 1x | <img src="/resources/BNC_Resistor_Breakout/parts/bnc_male_male.jpg" width="400"> |
-| BNC T Junction | 1x | <img src="/resources/BNC_Resistor_Breakout/parts/bnc_t.jpg" width="400"> |
-| BNC Banana Adapter | 1x | <img src="/resources/BNC_Resistor_Breakout/parts/bnc_banana.jpg" width="400"> |
+| Pair of Banana Cables | 2x | <img src="https://drive.google.com/uc?=1zPmOtzolGpLGq7FXzA6UtxfjIxi5rtgj" width="400"> |
+| BNC Enclosure w/ Resistor | 1x | <img src="https://drive.google.com/uc?=1Ar3DVyEAURttliP4ejUknUxMgPTX8hEa" width="400"> |
+| BNC End Cap | 1x | <img src="https://drive.google.com/uc?=18xOTSWE711-OogXCY3487XgaERhZJGPb" width="400"> |
+| BNC Male-Male | 1x | <img src="https://drive.google.com/uc?=16yrBvd7q5o7UegW0CE60aW_IJJCW-vMb" width="400"> |
+| BNC T Junction | 1x | <img src="https://drive.google.com/uc?=1sRo5d7EaU-9l2o9n2SuUx3FKVvEhOGy1" width="400"> |
+| BNC Banana Adapter | 1x | <img src="https://drive.google.com/uc?==16ZxykpaNOTwNvmD6b3LE3dAx29yq2Xeh" width="400"> |
 
 # BNC Box Configuration
 
 A [Pomona Electronics Shielded Aluminum BNC Enclosure](https://www.mouser.com/ProductDetail/Pomona-Electronics/3752?qs=LxJU1xRJL0FUBcEnm7b%252BpQ%3D%3D) was used for the BNC enclosure. A 7.5kΩ resistor was soldered as shown in the image below:
 
 <p align="center">
-  <img src="/resources/BNC_Resistor_Breakout/bnc.jpg" width="600">
+  <img src="https://drive.google.com/uc?=1Ar3DVyEAURttliP4ejUknUxMgPTX8hEa" width="600">
 </p>
 
 > It does not have to be exactly 7.5kΩ, anywhere in the range of 1kΩ to 10kΩ should be good
@@ -32,19 +32,19 @@ A [Pomona Electronics Shielded Aluminum BNC Enclosure](https://www.mouser.com/Pr
 This is a diagram of how the circuit looks like:
 
 <p align="center">
-  <img src="/resources/BNC_Resistor_Breakout/diagram.png" width="600">
+  <img src="https://drive.google.com/uc?=1Pzt0uleKeweh0aG9qGZa3TR4ghhi2ZHh" width="600">
 </p>
 
 This is how it should look like on the bench. Note that the left two banana plugs are going to the **HI** and **LO** **INPUT/OUTPUT** ports of the *Keithley 2400*. The right two banana plugs are hooked up to the **Hi** and **Lo** **OUTPUT** ports of the *GS 210*:
 
 <p align="center">
-  <img src="/resources/BNC_Resistor_Breakout/connections.jpg" width="600">
+  <img src="https://drive.google.com/uc?=1Bj8dmfqbuTeahtbvZVbH4Ga6WKHj4gm2" width="600">
 </p>
 
 Here is how it should be hooked up to the equipment:
 
 <p align="center">
-  <img src="/resources/BNC_Resistor_Breakout/equipment_connections.jpg" width="600">
+  <img src="https://drive.google.com/uc?=1ssoa5wyzdfC53Av8mGJ0meCR-wYBgoJP" width="600">
 </p>
 
 # Sample Instrument Configuration

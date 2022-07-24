@@ -48,10 +48,10 @@ Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`
   <img src="/resources/flowchart.png" width="800">
 </p>
 
-- libusb and Linux GPIB are software to hardware or hardware to software interfaces, depending on whether data is being sent or received; also know as drivers
-- NI-VISA and pyvisa-py are backends of VISA
+- [libusb](https://libusb.info) and [Linux GPIB](https://linux-gpib.sourceforge.io) are software to hardware or hardware to software interfaces, depending on whether data is being sent or received; also know as drivers
+- [NI-VISA](https://www.ni.com/en-us/support/documentation/supplemental/06/ni-visa-overview.html) and [pyvisa-py](https://pypi.org/project/PyVISA-py/) are backends of [pyVISA](https://pyvisa.readthedocs.io/en/latest/), which is a python implementation of [VISA](https://en.wikipedia.org/wiki/Virtual_instrument_software_architecture)
   - Virtual instrument software architecture (VISA) is a widely used application programming interface (API) for communicating with instruments programatically
-- QcoDeS is a Python-based data acquisition framework
+- [QcoDeS](https://qcodes.github.io/Qcodes/) is a Python-based data acquisition framework
 
 
 ## Supplemental Resources

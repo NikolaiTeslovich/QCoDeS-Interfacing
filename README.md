@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="/resources/QCoDeS-Interfacing.png" width="200" height="200">
+  <img src="https://drive.google.com/uc?id=1SHXTTPtkaeKoRXVlpD6fYRl_g1I6uMQT" width="200" height="200">
 </p>
 
 

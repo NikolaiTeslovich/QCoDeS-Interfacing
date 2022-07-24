@@ -35,16 +35,16 @@ After a simple installation of Linux and some drivers and packages as detailed i
 
 ## Linux GPIB
 Written for and tested on a `NI-PCI GPIB Adapter` with a `Yokogawa GS210` & `Keithley 2400` on `Ubuntu Server 20.04 LTS` & `Ubuntu Server 22.04 LTS`
-- [Installation Guide](/NI_PCI_GPIB/install.md)
-- [Initialization Notebook](/NI_PCI_GPIB/Initialization_GPIB.ipynb)
-- [QCoDeS R/G LED Sweep Notebook](/NI_PCI_GPIB/leds_sweep.ipynb)
+- [Installation Guide](/GPIB/install.md)
+- [Initialization Notebook](/GPIB/initialization_GPIB.ipynb)
+- [QCoDeS R/G LED Sweep Notebook](/GPIB/leds_sweep.ipynb)
 
 ## VISA over USB
 Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`
-- [Installation Guide](/GS210_USB/install.md)
-- [Initialization Notebook](/GS210_USB/Initialization_Guide.ipynb)
-- [QCoDeS Sweep Notebook](/GS210_USB/QCoDeS-GS210.ipynb)
-- [Jupyter Widgets V/I Toggle Notebook](/GS210_USB/GS210_VI_Selector.ipynb)
+- [Installation Guide](/USB/install.md)
+- [Initialization Notebook](/USB/initialization_guide.ipynb)
+- [QCoDeS Sweep Notebook](/USB/GS210_sweep.ipynb)
+- [Jupyter Widgets V/I Toggle Notebook](/USB/GS210_VI_selector.ipynb)
 
 ## Supplemental Resources
 - [GPIB Knowledge Glossary](https://www.contec.com/support/basic-knowledge/daq-control/gpib-communication/)
@@ -55,7 +55,7 @@ Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`
 
 ## Non-Interfacing Experiment
 Written for and tested on a `Yokogawa GS210` & `Keithley 2400`
-- [Resistor Experiment](/resources/Resistor_Circuit.md)
+- [Resistor Experiment](/resources/resistor_circuit.md)
 
 ## Future Prospects
 - [ ] Integrate with a Raspberry Pi to further lower the cost and not buy propreitary equipment from greedy vendors like National Instruments
@@ -67,4 +67,4 @@ Here are some interesting results that I got from sweeping the current while mea
   <img src="/resources/GreenvsRed.jpg" width="500">
 </p>
 
-> Check out the [notebook itself](/NI_PCI_GPIB/leds_sweep_+200mA.ipynb)
+> Check out the [notebook itself](/GPIB/leds_sweep.ipynb)

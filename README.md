@@ -43,7 +43,7 @@ Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`
 ## How does it work?
 
 <p align="center">
-  <img src="/resources/flowchart.png" width="800">
+  <img src="https://drive.google.com/file/d/1kKMcIzQy9GIJGHA6E7hjA5dIxH2-iwZb/view?usp=sharing" width="800">
 </p>
 
 - [libusb](https://libusb.info) and [Linux GPIB](https://linux-gpib.sourceforge.io) are software to hardware or hardware to software interfaces, depending on whether data is being sent or received; also know as drivers

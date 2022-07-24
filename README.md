@@ -25,6 +25,7 @@ After a simple installation of Linux and some drivers and packages as detailed i
 
 ## To-Do!
 - [ ] find directory where the experiments are
+- [ ] write up experimental setup for the R/G LED experiment
 
 ## Theoretically Supported Hardware
 ***Disclaimer:*** note all of these were tested, though these are what should theoretically work

@@ -67,7 +67,7 @@ Written for and tested on a `Yokogawa GS210` & `Keithley 2400`
 - [ ] Integrate with a Raspberry Pi to further lower the cost and not use propreitary equipment from vendors like National Instruments
 
 ## Example Results
-Here are some interesting results that I got from sweeping the current while measuring the voltage on a green and red LED after I configured everything with the documentation above: 
+Here are some interesting results from sweeping the current while measuring the voltage on a green and red LED after I configured everything with the documentation above: 
 
 <p align="center">
   <img src="https://drive.google.com/uc?id=1hsfEJz15QvUAflM1gH-wwn7oFN3n36ZS" width="600">

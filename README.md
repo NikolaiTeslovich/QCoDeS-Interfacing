@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  Interfacing with various equipment with QCoDeS over the VISA protocol through USB and GPIB
+  Interfacing with instruments over QCoDeS
 </p>
 
 Picture this, you have recently acquired a lab space with a lot of old equipment, some of which hasn't been used for literal decades. It's a safe to say that practically all of it uses the GPIB interface, and if not, likely USB. Why buy new expensive equipment when the old equipment is still good? 
@@ -17,7 +17,7 @@ Instead of using ugly, proprietary software from some company, why not do everyt
 What if you also stumbled upon a desktop that is older than some of the undergrads working at your lab and uses a NI-PCI GPIB Adapter from 1998? I'm sure Linux will run fine on it.
 > As they say, Linux runs on everything, even on a [potato](http://www.bbspot.com/News/2008/12/linux-on-a-potato.html?from=rss)
 
-After a simple installation of Linux and some drivers and packages as detailed in the documentation below, all of this equipment can now be programatically interfaced through Python with the VISA protocol through QCoDeS.
+After a simple installation of Linux and some drivers and packages as detailed in the documentation below, all of this equipment can now be programatically interfaced through Python and QCoDeS.
 
 ## To-Do!
 - [ ] find directory where the experiments are

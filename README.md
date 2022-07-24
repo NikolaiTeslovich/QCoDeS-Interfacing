@@ -10,7 +10,7 @@ Picture this, you have recently acquired a lab space with a lot of old equipment
 
 Instead of using ugly, proprietary software from some company, why not do everything in python, specifically in QCoDeS?
 
-What if you also stumbled upon a desktop that is older than some of the undergrads working at your lab and uses a NI-PCI GPIB Adapter from 1998? I'm sure Linux will run fine on it.
+What if you also stumbled upon a desktop that is older than some of the undergrads working at your lab and uses a NI-PCI GPIB Adapter from 1998? Linux will defintely run fine on it.
 > As they say, Linux runs on everything, even on a [potato](http://www.bbspot.com/News/2008/12/linux-on-a-potato.html?from=rss)
 
 After a simple installation of Linux and some drivers and packages as detailed in the documentation below, all of this equipment can now be programatically interfaced through Python and QCoDeS.

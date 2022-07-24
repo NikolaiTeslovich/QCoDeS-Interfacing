@@ -61,7 +61,7 @@ Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`
 
 ## Non-Interfacing Experiment
 Written for and tested on a `Yokogawa GS210` & `Keithley 2400`
-- [Resistor Experiment](/resources/resistor_circuit.md)
+- [Resistor Experiment](/resistor_circuit.md)
 
 ## Future Prospects
 - [ ] Integrate with a Raspberry Pi to further lower the cost and not use propreitary equipment from vendors like National Instruments

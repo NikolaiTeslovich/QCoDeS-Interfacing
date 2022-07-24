@@ -70,7 +70,7 @@ Written for and tested on a `Yokogawa GS210` & `Keithley 2400`
 Here are some interesting results that I got from sweeping the current while measuring the voltage on a green and red LED after I configured everything with the documentation above: 
 
 <p align="center">
-  <img src="/resources/GreenvsRed.jpg" width="500">
+  <img src="https://drive.google.com/uc?id=1hsfEJz15QvUAflM1gH-wwn7oFN3n36ZS" width="600">
 </p>
 
 > Check out the [notebook itself](/GPIB/leds_sweep.ipynb)

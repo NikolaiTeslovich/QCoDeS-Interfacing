@@ -37,7 +37,7 @@ After a simple installation of Linux and some drivers and packages as detailed i
 Written for and tested on a `NI-PCI GPIB Adapter` with a `Yokogawa GS210` & `Keithley 2400` on `Ubuntu Server 20.04 LTS` & `Ubuntu Server 22.04 LTS`
 - [Installation Guide](/NI_PCI_GPIB/install.md)
 - [Initialization Notebook](/NI_PCI_GPIB/Initialization_GPIB.ipynb)
-- [QCoDeS R/G LED Sweep Notebook](/NI_PCI_GPIB/leds_sweep_+200mA.ipynb)
+- [QCoDeS R/G LED Sweep Notebook](/NI_PCI_GPIB/leds_sweep.ipynb)
 
 ## VISA over USB
 Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`

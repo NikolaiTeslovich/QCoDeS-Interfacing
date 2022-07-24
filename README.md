@@ -24,7 +24,7 @@ After a simple installation of Linux and some drivers and packages as detailed i
 - [ ] write up experimental setup for the R/G LED experiment
 
 ## Theoretically Supported Hardware
-***Disclaimer:*** note all of these were tested, though these are what should theoretically work
+***Disclaimer:*** not all of these were tested, though these are what should theoretically work
 - [QCoDeS Community Drivers Supported Hardware](https://qcodes.github.io/Qcodes/api/generated/qcodes.instrument_drivers.html)
 - [Linux GPIB](https://linux-gpib.sourceforge.io/doc_html/supported-hardware.html)
 - VISA over USB
@@ -38,7 +38,7 @@ Written for and tested on a `NI-PCI GPIB Adapter` with a `Yokogawa GS210` & `Kei
 ## USB Instrument(s)
 Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`
 - [Installation Guide](/USB/install.md)
-- [Initialization Notebook](/USB/initialization_guide.ipynb)
+- [Initialization Notebook](/USB/initialization_USB.ipynb)
 - [QCoDeS Sweep Notebook](/USB/GS210_sweep.ipynb)
 - [Jupyter Widgets V/I Toggle Notebook](/USB/GS210_VI_selector.ipynb)
 
@@ -47,8 +47,6 @@ Written for and tested on a `Yokogawa GS210` with non-server `Ubuntu 20.04 LTS`
 <p align="center">
   <img src="/resources/flowchart.png" width="800">
 </p>
-
-The 
 
 ## Supplemental Resources
 - [GPIB Knowledge Glossary](https://www.contec.com/support/basic-knowledge/daq-control/gpib-communication/)

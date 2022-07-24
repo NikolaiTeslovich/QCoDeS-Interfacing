@@ -7,14 +7,14 @@
 </p>
 
 
-Picture this, you have recently acquired a lab space with a lot of old equipment, some of which hasn't been used for literal decades. It's a safe to say that practically all of it uses the GPIB interface, and if not, likely USB. Why buy new expensive equipment when the old equipment is still good? 
+Picture this, you have a lab space with plenty of old equipment. It's a safe to say that practically all of it uses the GPIB interface, and if not, likely USB. Why buy new expensive equipment when the old equipment works fine? 
 
-Instead of using ugly, proprietary software from some company, why not do everything in python, specifically in QCoDeS?
+Instead of using proprietary software, why not do everything in Python, specifically in [QCoDeS](https://qcodes.github.io/Qcodes/)?
 
-What if you also stumbled upon a desktop that is older than some of the undergrads working at your lab and uses a NI-PCI GPIB Adapter from 1998? Linux will defintely run fine on it.
+What if you also stumbled upon a desktop that is older than some of the undergrads working at your lab and uses a NI-PCI GPIB Adapter from 1998? Linux will defintely run on it.
 > As they say, Linux runs on everything, even on a [potato](http://www.bbspot.com/News/2008/12/linux-on-a-potato.html?from=rss)
 
-After a simple installation of Linux and some drivers and packages as detailed in the documentation below, all of this equipment can now be programatically interfaced through Python and QCoDeS.
+After a simple installation of Linux and some drivers and packages as detailed in the documentation below, all of this equipment can now be programatically interfaced through [QCoDeS](https://qcodes.github.io/Qcodes/)!
 
 ## To-Do!
 - [ ] find directory where the experiments are

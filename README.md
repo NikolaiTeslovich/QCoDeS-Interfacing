@@ -6,6 +6,10 @@
   <img src="https://drive.google.com/uc?id=1SHXTTPtkaeKoRXVlpD6fYRl_g1I6uMQT" width="200" height="200">
 </p>
 
+<p align="center">
+  <a href="https://docs.google.com/presentation/d/1UBGsYAu9vkwdS17pXb7eHijP-gA-1JVR3OLB4WItsUk/edit?usp=sharing">Here is a presentation about the project</a>
+</p>
+
 
 Picture this, you have a lab space with plenty of old equipment. It's a safe to say that practically all of it uses the GPIB interface, and if not, likely USB. Why buy new expensive equipment when the old equipment works fine? 
 
